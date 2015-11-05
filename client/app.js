@@ -1,43 +1,62 @@
 $(document).ready(function(){
-  loadContent.init();
+  page.init();
 });
 
+var genreData;
+
 var page = {
-
-  ///TEMPLATES///
-
-  genreTemplate: _.template($("#genreTmpl").html()),
-  artistTemplate: _.template($("#artistTmpl").html()),
-  albumTemplate: _.template($("#albumTmpl").html()),
-
-
-  //GET ROUTES//
 
   genreUrl: '/get-genre',
   artistUrl: '/get-artist',
   albumUrl: '/get-album',
 
-  genresUrl: '/get-genres',
-  artistsUrl: '/get-artists',
-  albumsUrl: '/get-albums',
-
-  //POST ROUTES//
-
-
   init: function(){
-    page.styles();
-    page.events();
-  },
-
-  events: function(){
-    createContent.events();
-    loadContent.events();
-  },
-
-  styles: function(){
     page.loadGenre();
-    page.loadArtist();
-    page.loadAlbum();
+  },
+  styling: function(){
+
+  },
+  events: function(){
+
+  },
+
+  loadGenre: function(){
+    $.ajax({
+      url: '/get-genre',
+      method: 'GET',
+      success: function(data){
+        console.log('SUCCESS', data);
+      },
+      failure: function(data){
+        console.log('FAILURE', data)
+      }
+  });
+  },
+
+  loadArtist: function(){
+    $.ajax({
+      url: loadContent.artistUrl,
+      method: 'GET',
+      success: function(data){
+
+      },
+      failure: function(data){
+
+      }
+  });
+  },
+
+  loadAlbum(){
+    $.ajax({
+      url: loadContent.albumUrl,
+      method: 'GET',
+      success: function(data){
+
+      },
+      failure: function(data){
+
+      }
+  });
   },
 
 };

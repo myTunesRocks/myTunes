@@ -1,21 +1,21 @@
-var templates = {
-
-  genreTmpl: [
-
-  ].join("");
-
-  artistTmpl: [
-
-  ].join("");
-
-  albumTmpl:[
-
-  ].join("");
-
-  favTmpl:[
-
-  ].join("");
-
-
-
-}
+// var templates = {
+//
+//   genreTmpl: [
+//
+//   ].join("");
+//
+//   artistTmpl: [
+//
+//   ].join("");
+//
+//   albumTmpl:[
+//
+//   ].join("");
+//
+//   favTmpl:[
+//
+//   ].join("");
+//
+//
+//
+// }
