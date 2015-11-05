@@ -72,6 +72,7 @@ public class Main {
             tempGenre = new Genre();
             tempGenre.id = genreResults.getInt("id");
             tempGenre.genreName = genreResults.getString("genre_name");
+            tempGenre.image = genreResults.getString("genre_image");
         }
         return tempGenre;
     }//End of selectGenre (One Genre)
@@ -84,6 +85,8 @@ public class Main {
             Genre tempGenre = new Genre();
             tempGenre.id = genresResults.getInt("id");
             tempGenre.genreName = genresResults.getString("genre_name");
+            tempGenre.image = genresResults.getString("genre_image");
+
             genreArrayList.add(tempGenre);
         }
         return genreArrayList;
@@ -98,6 +101,8 @@ public class Main {
             tempArtist.id = artistResults.getInt("id");
             tempArtist.artistName = artistResults.getString("artist_name");
             tempArtist.genreId = artistResults.getInt("genre_id");
+            tempArtist.image = artistResults.getString("artist_image");
+
         }
         return tempArtist;
     }//End of selectArtist (One Artist)
@@ -111,6 +116,8 @@ public class Main {
             tempArtist.id = artistsResults.getInt("id");
             tempArtist.artistName = artistsResults.getString("artist_name");
             tempArtist.genreId = artistsResults.getInt("genre_id");
+            tempArtist.image = artistsResults.getString("artist_image");
+
             artistArrayList.add(tempArtist);
         }
         return artistArrayList;
@@ -125,6 +132,8 @@ public class Main {
             tempAlbum.id = artistResults.getInt("id");
             tempAlbum.albumName = artistResults.getString("album_name");
             tempAlbum.artistId = artistResults.getInt("artist_id");
+            tempAlbum.image = artistResults.getString("album_image");
+
         }
         return tempAlbum;
     }//End of Select Album (One Album)
@@ -138,6 +147,7 @@ public class Main {
             tempAlbum.id = albumsResults.getInt("id");
             tempAlbum.albumName  = albumsResults.getString("album_name");
             tempAlbum.artistId = albumsResults.getInt("artist_id");
+            tempAlbum.image = albumsResults.getString("album_image");
             albumArrayList.add(tempAlbum);
         }
         return albumArrayList;
@@ -291,6 +301,12 @@ public class Main {
                     return "";
                 })
         );//End of Spark.post() /create-entry (ALL FIELDS AT ONCE)
+
+
+        if (selectGenres(connection).size() == 0) {
+            insertEntry(connection, "Metal", "Metal Image", "Slipknot", "Slipknot Image", "Iowa", "Iowa Image");
+        }
+
 
     }//End of Main Method
 
