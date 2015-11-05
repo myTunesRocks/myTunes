@@ -151,7 +151,7 @@ public class Main {
         createTables(connection);
 
 
-        Spark.externalStaticFileLocation("public");
+        Spark.externalStaticFileLocation("client");
         Spark.init();
 
         Spark.get(
