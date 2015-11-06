@@ -21,7 +21,7 @@ var loadContent = {
         var genreTemplate = _.template(templates.genreTmpl);
         _.each(newData, function(el, idx, array){
           loadGenreData += genreTemplate(el);
-          console.log(loadGenreData)
+          console.log(el)
             ///THIS IS WHERE THE GENRE TEMPLATE GOES //
         });
         $('.genrePage').html('');
@@ -34,7 +34,7 @@ var loadContent = {
   });
   },
 
-  loadArtist: function(){
+  loadArtist: function(genreID){
     $.ajax({
       url: '/get-artists',
       method: 'GET',
@@ -43,8 +43,12 @@ var loadContent = {
         newData = JSON.parse(data);
         var artistTemplate = _.template(templates.artistTmpl);
         loadArtistData = '';
-        _.each(newData, function(el, idx, arr){
+        var artistsWithGenre = _.filter(newData, function(el){
+          return el.genreId === genreID
+        });
+        _.each(artistsWithGenre, function(el, idx, arr){
           loadArtistData += artistTemplate(el);
+          console.log(el)
             ///THIS IS WHERE THE ARTIST TEMPLATE GOES //
         });
         $('.artistPage').html('');
@@ -57,7 +61,7 @@ var loadContent = {
   });
   },
 
-  loadAlbum(){
+  loadAlbum(artistID){
     $.ajax({
       url: '/get-albums',
       method: 'GET',
@@ -66,7 +70,10 @@ var loadContent = {
         newData = JSON.parse(data);
         var albumTemplate = _.template(templates.albumTmpl);
         loadAlbumData = '';
-        _.each(newData, function(el, idx, arr){
+        var albumWithArtist = _.filter(newData, function(el){
+          return el.artistId === artistID
+        });
+        _.each(albumWithArtist, function(el, idx, arr){
           loadAlbumData += albumTemplate(el);
           console.log(el)
           ///THIS IS WHERE THE ALBUM TEMPLATE GOES //
