@@ -3,9 +3,7 @@ $(document).ready(function(){
 });
 
 var page = {
-  genreTemplate: _.template($("#genreTmpl").html()),
-  artistTemplate: _.template($("#artistTmpl").html()),
-  albumTemplate: _.template($("#albumTmpl").html()),
+
 
   init: function(){
     page.styling();
@@ -16,6 +14,42 @@ var page = {
   },
   events: function(){
     createContent.init();
+    page.showAndHide();
+  },
+  showAndHide: function(){
+    ////HAMBURGER BUTTON////
+   $('.hamburger').click(function() {
+   $(this).toggleClass('expanded').siblings('div').slideToggle();
+   });
+
+
+    ///LOGIN///
+    $('.landingPage').on('click', '.loginButton', function(event){
+      event.preventDefault();
+      $('.landingPage').addClass('hidden');
+      $('.genrePage').removeClass('hidden');
+    });
+
+    ///HIDE GENRE ACCESS ARTIST///
+    $('.genrePage').on('click', '.genreCol', function(event){
+      console.log(this);
+      $(this).parent('.genrePage').addClass('hidden');
+      var genreID = $(this).data('index');
+      console.log(genreID)
+      loadContent.loadArtist(genreID);
+      $('.artistPage').removeClass('hidden');
+    });
+
+    ///HIDE ARTIST ACCESS ALBUM///
+    $('.artistPage').on('click', '.artistCol', function(event){
+      console.log(this);
+      $(this).parent('.artistPage').addClass('hidden');
+      var artistID = $(this).data('index');
+      console.log(artistID)
+      loadContent.loadAlbum(artistID);
+      $('.albumPage').removeClass('hidden');
+    });
+
   },
 
 };

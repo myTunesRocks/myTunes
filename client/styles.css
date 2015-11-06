@@ -26,7 +26,11 @@
   left: 96%;
   text-indent: 200%;
   overflow: hidden;
+<<<<<<< HEAD
   background: rgba(255, 255, 255, 0.8) url("http://i.imgur.com/vKRaKDX.png") center no-repeat;
+=======
+  background: rgba(255, 255, 255, 0.8) url("http://i.imgur.com/vKRaKDX.png (563b)") center no-repeat;
+>>>>>>> cb02ad0478cf5154d3c3456db0cf1d6bcb194238
   border: 1px solid #ddd;
   border-radius: 3px;
   background-size: 80%;
@@ -60,6 +64,7 @@ a:active,
 a:focus {
   background: #e7e7e7; }
 
+<<<<<<< HEAD
 .desktop {
   display: block;
   overflow: hidden; }
@@ -81,3 +86,6 @@ article {
     display: block; }
   .desktop {
     display: none; } }
+=======
+/*# sourceMappingURL=styles.css.map */
+>>>>>>> cb02ad0478cf5154d3c3456db0cf1d6bcb194238
