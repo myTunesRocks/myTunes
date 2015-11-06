@@ -1,6 +1,7 @@
 package com.theironyard;
 
 import jodd.json.JsonSerializer;
+import spark.Session;
 import spark.Spark;
 
 import java.sql.*;
@@ -10,20 +11,33 @@ public class Main {
 
     public static void createTables(Connection connection) throws SQLException{
         Statement statement = connection.createStatement();
+        //ADD USER TABLE WITH USER AND PASSWORD
+        statement.execute("CREATE TABLE IF NOT EXISTS users (id IDENTITY, name VARCHAR, password VARCHAR)");
+        //ADD GENRE TABLE WITH GENRE NAME, GENRE IMAGE
         statement.execute("CREATE TABLE IF NOT EXISTS genres (id IDENTITY, genre_name VARCHAR, genre_image VARCHAR)");
+        //ADD ARTISTS TABLE WITH ARTIST NAME, GENRE ID, ARTIST IMAGE
         statement.execute("CREATE TABLE IF NOT EXISTS artists (id IDENTITY, artist_name VARCHAR, genre_id INT, artist_image VARCHAR)");
+        //ADD ALBUMS TABLE WITH ARTIST ID, ALBUM NAME, ALBUM IMAGE
         statement.execute("CREATE TABLE IF NOT EXISTS albums (id IDENTITY, artist_id INT, album_name VARCHAR, album_image VARCHAR)");
     }//End of createTables
 
+    //ADD INSERT USER METHOD (CONNECTION, NAME, PASSWORD)
+    public static void insertUser(Connection conn, String name, String password) throws SQLException {
+        PreparedStatement statement = conn.prepareStatement("INSERT INTO users VALUES(NULL,?,?)");
+        statement.setString(1, name);
+        statement.setString(2, password);
+        statement.execute();
+    }//End of insertUser
 
+    //ADD INSERT ENTRY METHOD (CONNECTION, GENRE NAME, GENRE IMAGE)
     public static void insertEntry(Connection connection, String genreName, String genreImage,
                                    String artistName,String artistImage, String albumName, String albumImage)throws SQLException{
         int genreId = insertGenre(connection, genreName, genreImage);
         int artistId = insertArtist(connection, artistName, genreId, artistImage);
         insertAlbum(connection, albumName, artistId, albumImage);
-    }
+    }//END OF insertEntry
 
-
+    //ADD INSERT GENRE (CONNECTION, GENRE NAME, GENRE IMAGE)
     public static int insertGenre(Connection connection, String genreName, String genreImage) throws SQLException{
         PreparedStatement statement = connection.prepareStatement("INSERT INTO genres VALUES (Null, ?, ?)");
         statement.setString(1, genreName);
@@ -39,6 +53,7 @@ public class Main {
         return 0;
     }//End of insertGenre
 
+    //ADD INSERT ARTIST (CONNECTION, ARTIST NAME, GENRE ID, ARTIST IMAGE)
     public static int insertArtist(Connection connection, String artistName, int genreId, String artistImage) throws SQLException {
         PreparedStatement statement = connection.prepareStatement("INSERT INTO artists VALUES (NULL, ?, ?, ?)");
         statement.setString(1, artistName);
@@ -55,6 +70,7 @@ public class Main {
         return 0;
     }//End of insertArtist
 
+    //ADD INSERT ALbUM (CONNECTION, ALBUM NAME, ARTIST ID, ALBUM IMAGE)
     public static void insertAlbum(Connection connection, String albumName, int artistId, String albumImage) throws SQLException {
         PreparedStatement statement = connection.prepareStatement("INSERT INTO albums VALUES (NULL, ?, ?, ?)");
         statement.setString(2, albumName);
@@ -63,6 +79,22 @@ public class Main {
         statement.execute();
     }//End of insertAlbum
 
+    //SELECT USER(CONNECTION, NAME) (ONE USER)
+    public static User selectUser(Connection conn, String name) throws SQLException {
+        User user = null;
+        PreparedStatement statement = conn.prepareStatement("SELECT * FROM users WHERE name = ?");
+        statement.setString(1, name);
+        ResultSet results = statement.executeQuery();
+        if(results.next()){
+            user = new User();
+            user.id = results.getInt("id");
+            user.password = results.getString("password");
+        }
+        return user;
+    }//End of selectUser (ONE USER)
+
+
+    //SELECT GENRE (CONNECTION, ID) (ONE GENRE)
     public static Genre selectGenre(Connection connection, int id) throws SQLException {
         Genre tempGenre = null;
         PreparedStatement statement = connection.prepareStatement("SELECT * FROM genres WHERE id = ?");
@@ -77,6 +109,7 @@ public class Main {
         return tempGenre;
     }//End of selectGenre (One Genre)
 
+    //SELECT GENRES (CONNECTION) (ALL GENRES)
     public static ArrayList<Genre> selectGenres(Connection connection) throws SQLException {
         ArrayList<Genre> genreArrayList = new ArrayList<>();
         PreparedStatement stmt = connection.prepareStatement("SELECT * FROM genres");
@@ -92,6 +125,7 @@ public class Main {
         return genreArrayList;
     }//End of selectCountries (Get ALL Genres)
 
+    //SELECT ARTIST (CONNECTION, ID) (ONE ARTIST)
     public static Artist selectArtist(Connection connection, int id) throws SQLException {
         Artist tempArtist = new Artist();
         PreparedStatement statement = connection.prepareStatement("SELECT * FROM artists WHERE id = ?");
@@ -107,6 +141,7 @@ public class Main {
         return tempArtist;
     }//End of selectArtist (One Artist)
 
+    //SELECT ARTISTS (CONNECTION) (ALL ARTSITS)
     public static ArrayList<Artist> selectArtists(Connection connection)throws SQLException{
         ArrayList<Artist> artistArrayList = new ArrayList<>();
         PreparedStatement statement = connection.prepareStatement("SELECT * FROM artists");
@@ -123,6 +158,7 @@ public class Main {
         return artistArrayList;
     }//End of selectArtists (Get ALL Artists)
 
+    //SELECT ALBUM (CONNECTION, ID) (ONE ALBUM)
     public static Album selectAlbum(Connection connection, int id) throws SQLException {
         Album tempAlbum = new Album();
         PreparedStatement statement = connection.prepareStatement("SELECT * FROM albums WHERE id = ?");
@@ -138,6 +174,7 @@ public class Main {
         return tempAlbum;
     }//End of Select Album (One Album)
 
+    //SELECT ALBUMS (CONNECTION) (ALL ALBUMS)
     public static ArrayList<Album> selectAlbums(Connection connection) throws SQLException{
         ArrayList<Album> albumArrayList = new ArrayList();
         PreparedStatement statement = connection.prepareStatement("SELECT * FROM albums");
@@ -164,6 +201,8 @@ public class Main {
         Spark.externalStaticFileLocation("client");
         Spark.init();
 
+
+        //SPARK.GET  ----> /get-genres (All Genres)
         Spark.get(
                 "/get-genres",
                 ((request, response) -> {
@@ -173,6 +212,8 @@ public class Main {
                 })
         );//End of Spark.get() /get-genres (Get ALL Genres)
 
+
+        //SPARK.GET  ----> /get-genre (Get One Genre)
         Spark.get(
                 "/get-genre",
                 ((request, response) -> {
@@ -189,6 +230,7 @@ public class Main {
                 })
         );//End of Spark.get() /get-genre (Get ONE Genre)
 
+        //SPARK.GET  ----> /get-artists (Get All Artists)
         Spark.get(
                 "/get-artists",
                 ((request, response) -> {
@@ -198,6 +240,7 @@ public class Main {
                 })
         );//End of Spark.get() /get-artists (Get ALL Artists)
 
+        //SPARK.GET  ----> /get-artist (Get One Artist)
         Spark.get(
                 "/get-artist",
                 ((request, response) -> {
@@ -215,6 +258,7 @@ public class Main {
                 })
         );//End of Spark.get() /get-artist (Get ONE artist)
 
+        //SPARK.GET  ----> /get-albums (Get All Albums)
         Spark.get(
                 "/get-albums",
                 ((request, response) -> {
@@ -224,6 +268,7 @@ public class Main {
                 })
         );//End of Spark.get() /get-albums (Get ALL Albums)
 
+        //SPARK.GET  ----> /get-album (Get One Album)
         Spark.get(
                 "/get-album",
                 ((request, response) -> {
@@ -242,6 +287,38 @@ public class Main {
 
         );//End of Spark.get() /get-album (Get ONE Album)
 
+
+
+        //SPARK.POST  ----> /login (Login)
+        Spark.post(
+                "/login",
+                ((request, response) -> {
+                    String username = request.queryParams("username");
+                    String password = request.queryParams("password");
+
+                    if (username.isEmpty() || password.isEmpty()) {
+                        Spark.halt(403);
+                    }
+
+                    User user = selectUser(connection, username);
+                    if (user == null) {
+                        //user = new User();
+                        //user.password = password;
+                        //users.put(username, user);
+                        insertUser(connection, username, password);
+                    }
+                    else if (!password.equals(user.password)) {
+                        Spark.halt(403);
+                    }
+
+                    Session session = request.session();
+                    session.attribute("username", username);
+
+                    return "";
+                })
+        );//End of Spark.post() "/login" (Creates New User if No User Exists)
+
+        //SPARK.POST  ----> /create-genre (Post One Genre)
         Spark.post(
                 "/create-genre",
                 ((request, response) -> {
@@ -255,6 +332,7 @@ public class Main {
                 })
         );//End of Spark.post() /create-genre (Create one genre)
 
+        //SPARK.POST  ----> /create-artist (Post One Artist)
         Spark.post(
                 "/create-artist",
                 ((request, response) -> {
@@ -271,6 +349,7 @@ public class Main {
                 })
         );//End of Spark.post() /create-artist (Create ONE artist)
 
+        //SPARK.POST  ----> /create-album (Post One Album)
         Spark.post(
                 "/create-album",
                 ((request, response) -> {
@@ -288,6 +367,7 @@ public class Main {
                 })
         );//End of Spark.post() /create-album (Create One Album)
 
+        //SPARK.POST  ----> /create-entry (Post One Full Entry)
         Spark.post(
                 "/create-entry",
                 ((request, response) -> {
@@ -302,9 +382,19 @@ public class Main {
                 })
         );//End of Spark.post() /create-entry (ALL FIELDS AT ONCE)
 
+        /*
+        if(selectUser(connection, null) == null){
+            insertUser(connection, "Duke", "Duke");
+            insertUser(connection, "Blake", "Blake");
+            insertUser(connection, "Kellee", "Morgan");
+            insertUser(connection, "Jared", "Jared");
+        }
+        */
 
         if (selectGenres(connection).size() == 0) {
             insertEntry(connection, "Metal", "Metal Image", "Slipknot", "Slipknot Image", "Iowa", "Iowa Image");
+            insertEntry(connection, "Pop", "Pop Image", "Taylor Swift", "Swift Image", "1989", "1989 Image");
+            insertEntry(connection, "Country", "Country Image", "Blake Shelton", "Blake Image", "Bring Back the Sunshine", "Sunshine Image");
         }
 
 

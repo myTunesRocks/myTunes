@@ -110,4 +110,15 @@ public class MainTest {
         endConnection(connection);
     }//End of testEntry (Create ONE Entry with all Fields Filled In)
 
+
+    @Test
+    public void testUser() throws SQLException {
+        Connection conn = startConnection();
+        Main.insertUser(conn, "Alice", "");
+        User user = Main.selectUser(conn, "Alice");
+        endConnection(conn);
+
+        assertTrue(user != null);
+    }//End of testUser
+
 }//End of TEST MAIN
