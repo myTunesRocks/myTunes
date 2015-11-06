@@ -1,11 +1,15 @@
-.artistCol {
-  background-color: blue;
+.loginForm {
   display: flex;
   justify-content: center;
-  margin-bottom: 20px;
-  height: 200px; }
+  flex-direction: column; }
 
-.artistPage {
+.genreCol {
+  background-color: #a173bb;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px; }
+
+.genrePage {
   text-align: center; }
 
 /*# sourceMappingURL=styles.css.map */

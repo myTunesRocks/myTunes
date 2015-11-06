@@ -1,16 +1,19 @@
+/////LANDING PAGE////
+.loginForm{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+}
 
 
 
-
-
-.artistCol {
-  background-color: blue;
+.genreCol {
+  background-color: #a173bb;
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
-  height: 200px;
 }
-.artistPage{
+.genrePage{
   text-align: center;
-
 }

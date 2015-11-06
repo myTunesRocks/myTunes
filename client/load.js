@@ -19,7 +19,7 @@ var loadContent = {
         newData = JSON.parse(data);
         loadGenreData = '';
         _.each(newData, function(el, idx, array){
-          loadGenreData += '<div class="genreCol col-md-4">' + el.genreName + '<br>' + '</div class="genreCol col-md-4">'
+          loadGenreData += '<div data-id="'+ el.id +'"class="genreCol col-md-4">' + el.genreName + '<br>' + '<img src =' + el.image + '>' + '</div class="genreCol col-md-4">'
             ///THIS IS WHERE THE GENRE TEMPLATE GOES //
         });
         $('.genrePage').html('');
