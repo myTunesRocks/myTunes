@@ -18,8 +18,8 @@ var loadContent = {
         console.log('SUCCESS LOAD GENRE', JSON.parse(data));
         newData = JSON.parse(data);
         loadGenreData = '';
-        _.each(newData, function(el, idx, array){
-          loadGenreData += '<div data-id="'+ el.id +'"class="genreCol col-md-4">' + el.genreName + '<br>' + '<img src =' + el.image + '>' + '</div class="genreCol col-md-4">'
+        _.each(newData, function(data, idx, array){
+          loadGenreData += '<div data-id="'+ data.id +'"class="genreCol col-md-4">' + data.genreName + '<br>' + '<img src =' + data.image + '>' + '</div class="genreCol col-md-4">'
             ///THIS IS WHERE THE GENRE TEMPLATE GOES //
         });
         $('.genrePage').html('');
@@ -40,8 +40,8 @@ var loadContent = {
         console.log('SUCCESS LOAD ARTIST', JSON.parse(data));
         newData = JSON.parse(data);
         loadArtistData = '';
-        _.each(newData, function(el, idx, arr){
-          loadArtistData += '<div class="artistCol col-md-4">' + el.artistName + '<img src =' + el.image + '>' + '</div class="artistCol col-md-4">'
+        _.each(newData, function(data, idx, arr){
+          loadArtistData += '<div class="artistCol col-md-4">' + data.artistName + '<img src =' + data.image + '>' + '</div class="artistCol col-md-4">'
             ///THIS IS WHERE THE ARTIST TEMPLATE GOES //
         });
         $('.artistPage').html('');
@@ -62,8 +62,8 @@ var loadContent = {
         console.log('SUCCESS LOAD ALBUM', JSON.parse(data));
         newData = JSON.parse(data);
         loadAlbumData = '';
-        _.each(newData, function(el, idx, arr){
-          loadAlbumData += el.albumName
+        _.each(newData, function(data, idx, arr){
+          loadAlbumData += data.albumName
           ///THIS IS WHERE THE ALBUM TEMPLATE GOES //
         });
         $('.albumPage').html('');

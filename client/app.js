@@ -38,7 +38,6 @@ var page = {
       $('.albumPage').removeClass('hidden');
     });
 
-
   },
 
 };
