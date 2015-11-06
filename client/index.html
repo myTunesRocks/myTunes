@@ -35,41 +35,35 @@
     <div class="albumPage row hidden">
       <!-- ALBUMS APPEND HERE EZ -->
     </div>
+</div>
 <form class = 'addMusicForm hidden' action="">
    <div class="formPage">
      <div class="form-group">
        <label for="genre">Genre</label>
          <select id="selectGenre" class="form-control" name="">
-           <option value="">Rock</option>
          </select>
-         <button type="button" name="button">Other</button>
-
+         <button type="button" name="button">New</button>
      </div>
      <div class="form-group">
        <label for="genre">Artists</label>
-         <select id="selectGenre" class="form-control" name="">
-           <option value="">Rock</option>
+         <select id="selectArtist" class="form-control" name="">
          </select>
-         <button type="button" name="button">Other</button>
-
+         <button type="button" name="button">New</button>
      </div>
-
      <div class="form-group">
-       <label for="genre">BLUE</label>
-         <input class="sample" type="text" name="name" value="" placeholder="Enter Album Name">
-         <input class="sample" type="text" name="image" value="" placeholder="Enter image url">
-         <button class="sampleBtn">ClickMe</button>
+       <label for="genre">Album</label>
+         <input type = "text" id="selectAlbumName" class="form-control" placeholder = "Enter Album Name"></input>
+         <input type = "text" id="selectAlbumImage" class="form-control" placeholder = "Enter Album Image"></input>
+         <button type="button" name="button">New</button>
      </div>
      <button type="button" name="submit">Submit</button>
    </div>
 </form>
 
 
-</div>
-
-
 <script src="bower_components/jquery/dist/jquery.js" charset="utf-8"></script>
 <script src="bower_components/underscore/underscore.js" charset="utf-8"></script>
+<script src="login.js" charset="utf-8"></script>
 <script src="templates.js" charset="utf-8"></script>
 <script src="load.js" charset="utf-8"></script>
 <script src="create.js" charset="utf-8"></script>
