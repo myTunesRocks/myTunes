@@ -8,21 +8,34 @@
 </head>
 <body>
 <div class="container">
+  <!-- HAMBURGER NAV BAR -->
+  <ul class="navigation">
+     <li class="nav-item"><a href="#">Add Music</a></li>
+     <li class="nav-item"><a href="#">Favorites</a></li>
+     <li class="nav-item"><a href="#">Logout</a></li>
+  </ul>
 
-  <div class="landingPage">
-        <!-- LOGIN APPEND HERE EZ -->
-  </div>
-  <div class="genrePage row hidden">
-      <!-- GENRES APPEND HERE EZ -->
-  </div>
-  <div class="artistPage row active">
-    <!-- ARTISTS APPEND HERE EZ -->
-  </div>
-  <div class="albumPage hidden">
-    <!-- ALBUMS APPEND HERE EZ -->
-  </div>
-    <form action="">
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger"></label>
+  <div class="site-wrap">
 
+    <div class="landingPage">
+      <div class="loginForm">
+        <input type="text" name="username" placeholder="Username">
+        <input type="text" name="password" placeholder="Password">
+        <button class="btn btn-primary loginButton" type="button" name="loginButton">Login</button>
+      </div>
+    </div>
+    <div class="genrePage row hidden">
+        <!-- GENRES APPEND HERE EZ -->
+    </div>
+    <div class="artistPage row hidden">
+      <!-- ARTISTS APPEND HERE EZ -->
+    </div>
+    <div class="albumPage row hidden">
+      <!-- ALBUMS APPEND HERE EZ -->
+    </div>
+      <form class="hidden" action="">
       <div class="formPage">
         <div class="form-group">
           <label for="genre">Genre</label>
@@ -34,7 +47,6 @@
               <option value="">Rap</option>
             </select>
             <button type="button" name="button">Other</button>
-
         </div>
         <div class="form-group">
           <label for="genre">Artists</label>
@@ -46,7 +58,6 @@
               <option value="">Rap</option>
             </select>
             <button type="button" name="button">Other</button>
-
         </div>
 
         <div class="form-group">
@@ -59,12 +70,13 @@
       </div>
     </form>
 
-
   </div>
+</div>
 
 
 <script src="bower_components/jquery/dist/jquery.js" charset="utf-8"></script>
 <script src="bower_components/underscore/underscore.js" charset="utf-8"></script>
+<script src="templates.js" charset="utf-8"></script>
 <script src="load.js" charset="utf-8"></script>
 <script src="create.js" charset="utf-8"></script>
 <script src="app.js" charset="utf-8"></script>

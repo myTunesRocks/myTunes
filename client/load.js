@@ -18,8 +18,10 @@ var loadContent = {
         console.log('SUCCESS LOAD GENRE', JSON.parse(data));
         newData = JSON.parse(data);
         loadGenreData = '';
+        var genreTemplate = _.template(templates.genreTmpl);
         _.each(newData, function(el, idx, array){
-          genreTemplate.loadGenreData();
+          loadGenreData += genreTemplate(el);
+          console.log(loadGenreData)
             ///THIS IS WHERE THE GENRE TEMPLATE GOES //
         });
         $('.genrePage').html('');
@@ -39,9 +41,10 @@ var loadContent = {
       success: function(data){
         console.log('SUCCESS LOAD ARTIST', JSON.parse(data));
         newData = JSON.parse(data);
+        var artistTemplate = _.template(templates.artistTmpl);
         loadArtistData = '';
         _.each(newData, function(el, idx, arr){
-          loadArtistData += '<div class="artistCol col-md-4">' + el.artistName + '<img src =' + el.image + '>' + '</div class="artistCol col-md-4">'
+          loadArtistData += artistTemplate(el);
             ///THIS IS WHERE THE ARTIST TEMPLATE GOES //
         });
         $('.artistPage').html('');
@@ -61,13 +64,15 @@ var loadContent = {
       success: function(data){
         console.log('SUCCESS LOAD ALBUM', JSON.parse(data));
         newData = JSON.parse(data);
+        var albumTemplate = _.template(templates.albumTmpl);
         loadAlbumData = '';
         _.each(newData, function(el, idx, arr){
-          loadAlbumData += el.albumName
+          loadAlbumData += albumTemplate(el);
+          console.log(el)
           ///THIS IS WHERE THE ALBUM TEMPLATE GOES //
         });
         $('.albumPage').html('');
-        $('.albumPage').append(loadAlbumData);
+        $('.albumPage').append('<h1>ALBUMS</h1>' + loadAlbumData);
         ///GREEN === ALBUM PAGE //
       },
       failure: function(data){

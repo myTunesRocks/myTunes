@@ -14,27 +14,27 @@ var createContent = {
   },
 
   submitGenre: function(){
-    // $('body').on('click','.sampleBtn' ,function(event){
-    //   event.preventDefault();
-    //     var genreData = {
-    //       genreName: $('input[name="name"]').val(),
-    //       genreImage: $('input[name="image"]').val()
-    //       /// THESE ARE THE INPUT BOXES FOR GENRE FORM SUBMITTAL //
-    //     };
-    //     $.ajax({
-    //     url: '/create-genre',
-    //     method: 'POST',
-    //     data: genreData,
-    //     success: function(data){
-    //       console.log('SUCCESS', data)
-    //       loadContent.init();
-    //     },
-    //     failure: function(data){
-    //
-    //     },
-    //
-    //   });
-    // });
+    $('body').on('click','.sampleBtn' ,function(event){
+      event.preventDefault();
+        var genreData = {
+          genreName: $('input[name="name"]').val(),
+          genreImage: $('input[name="image"]').val()
+          /// THESE ARE THE INPUT BOXES FOR GENRE FORM SUBMITTAL //
+        };
+        $.ajax({
+        url: '/create-genre',
+        method: 'POST',
+        data: genreData,
+        success: function(data){
+          console.log('SUCCESS', data)
+          loadContent.init();
+        },
+        failure: function(data){
+
+        },
+
+      });
+    });
   },
 
   submitArtist: function(){
