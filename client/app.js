@@ -1,43 +1,21 @@
 $(document).ready(function(){
-  loadContent.init();
+  page.init();
 });
 
 var page = {
-
-  ///TEMPLATES///
-
   genreTemplate: _.template($("#genreTmpl").html()),
   artistTemplate: _.template($("#artistTmpl").html()),
   albumTemplate: _.template($("#albumTmpl").html()),
 
-
-  //GET ROUTES//
-
-  genreUrl: '/get-genre',
-  artistUrl: '/get-artist',
-  albumUrl: '/get-album',
-
-  genresUrl: '/get-genres',
-  artistsUrl: '/get-artists',
-  albumsUrl: '/get-albums',
-
-  //POST ROUTES//
-
-
   init: function(){
-    page.styles();
+    page.styling();
     page.events();
   },
-
-  events: function(){
-    createContent.events();
-    loadContent.events();
+  styling: function(){
+    loadContent.init();
   },
-
-  styles: function(){
-    page.loadGenre();
-    page.loadArtist();
-    page.loadAlbum();
+  events: function(){
+    createContent.init();
   },
 
 };

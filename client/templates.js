@@ -1,21 +1,20 @@
 var templates = {
 
-  genreTmpl: [
+ genreTmpl: [
+   '<div class="col-md-4">' + data..genre.image + data.genre + '</div>'
+ ].join("");
 
-  ].join("");
+ artistTmpl: [
+   '<div class="col-md-4">' + data.artist.image + data.artist + '</div>'
+ ].join("");
 
-  artistTmpl: [
+ albumTmpl:[
+   '<div class="col-md-4">' + data.album.image + data.album + '</div>'
+ ].join("");
 
-  ].join("");
+ favTmpl:[
 
-  albumTmpl:[
-
-  ].join("");
-
-  favTmpl:[
-
-  ].join("");
-
+ ].join("");
 
 
 }

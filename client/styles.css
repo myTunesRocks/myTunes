@@ -1,16 +1,11 @@
-
-
-
-
-
 .artistCol {
   background-color: blue;
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
-  height: 200px;
-}
-.artistPage{
-  text-align: center;
+  height: 200px; }
 
-}
+.artistPage {
+  text-align: center; }
+
+/*# sourceMappingURL=styles.css.map */
