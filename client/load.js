@@ -68,10 +68,11 @@ var loadContent = {
         loadAlbumData = '';
         _.each(newData, function(el, idx, arr){
           loadAlbumData += albumTemplate(el);
+          console.log(el)
           ///THIS IS WHERE THE ALBUM TEMPLATE GOES //
         });
         $('.albumPage').html('');
-        $('.albumPage').append(loadAlbumData);
+        $('.albumPage').append('<h1>ALBUMS</h1>' + loadAlbumData);
         ///GREEN === ALBUM PAGE //
       },
       failure: function(data){
