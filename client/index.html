@@ -3,17 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <title>myTunes</title>
+
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <span class = 'glyphicon glyphicon-cd'></span>
   <nav class="mobile">
-   <button class='hamburger'>Toggle</button>
+   <button class='hamburger'></button>
    <div>
-     <a href="#">Mobile 1</a>
-     <a href="#">Mobile 2</a>
-     <a href="#">Mobile 3</a>
-     <a href="#">Mobile 4</a>
+     <a class = 'addMusic' href="#">Add Music</a>
+     <a class = 'favorites' href="#">Favorites</a>
+     <a class = 'logout' href="#">Logout</a>
    </div>
  </nav>
 <div class="container">
@@ -34,7 +35,36 @@
     <div class="albumPage row hidden">
       <!-- ALBUMS APPEND HERE EZ -->
     </div>
-      <form class="hidden" action="">
+<form class = 'addMusicForm hidden' action="">
+   <div class="formPage">
+     <div class="form-group">
+       <label for="genre">Genre</label>
+         <select id="selectGenre" class="form-control" name="">
+           <option value="">Rock</option>
+         </select>
+         <button type="button" name="button">Other</button>
+
+     </div>
+     <div class="form-group">
+       <label for="genre">Artists</label>
+         <select id="selectGenre" class="form-control" name="">
+           <option value="">Rock</option>
+         </select>
+         <button type="button" name="button">Other</button>
+
+     </div>
+
+     <div class="form-group">
+       <label for="genre">BLUE</label>
+         <input class="sample" type="text" name="name" value="" placeholder="Enter Album Name">
+         <input class="sample" type="text" name="image" value="" placeholder="Enter image url">
+         <button class="sampleBtn">ClickMe</button>
+     </div>
+     <button type="button" name="submit">Submit</button>
+   </div>
+</form>
+
+
 </div>
 
 

@@ -20,9 +20,13 @@ var page = {
     ////HAMBURGER BUTTON////
    $('.hamburger').click(function() {
    $(this).toggleClass('expanded').siblings('div').slideToggle();
+
    });
 
-
+   $('body').on('click', '.addMusic', function(event){
+     event.preventDefault();
+     $('form').toggleClass('hidden');
+   });
     ///LOGIN///
     $('.landingPage').on('click', '.loginButton', function(event){
       event.preventDefault();
