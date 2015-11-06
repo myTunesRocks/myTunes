@@ -62,18 +62,18 @@ var createContent = {
   },
 
   submitAlbum: function(){
-    // $('button').on('submit', function(){
-    //   $.ajax({
-    //     url: '/create-album',
-    //     method: 'POST',
-    //     success: function(data){
-    //
-    //     },
-    //     failure: function(data){
-    //
-    //     },
-    //   });
-    // });
+    $('button').on('submit', function(){
+      $.ajax({
+        url: '/create-album',
+        method: 'POST',
+        success: function(data){
+
+        },
+        failure: function(data){
+
+        },
+      });
+    });
   },
 
 

@@ -3,6 +3,9 @@ $(document).ready(function(){
 });
 
 var page = {
+  genreTemplate: _.template($("#genreTmpl").html()),
+  artistTemplate: _.template($("#artistTmpl").html()),
+  albumTemplate: _.template($("#albumTmpl").html()),
 
   init: function(){
     page.styling();
