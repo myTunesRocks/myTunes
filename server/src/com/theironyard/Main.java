@@ -401,7 +401,7 @@ public class Main {
         */
 
         if (selectGenres(connection).size() == 0) {
-            insertEntry(connection, "Metall;", "Metal Image", "Slipknot", "Slipknot Image", "Iowa", "Iowa Image");
+            insertEntry(connection, "Metal;", "Metal Image", "Slipknot", "Slipknot Image", "Iowa", "Iowa Image");
             insertEntry(connection, "Pop", "Pop Image", "Taylor Swift", "Swift Image", "1989", "1989 Image");
             insertEntry(connection, "Country", "Country Image", "Blake Shelton", "Blake Image", "Bring Back the Sunshine", "Sunshine Image");
         }
