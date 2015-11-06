@@ -1,42 +1,11 @@
-.loginForm {
-  display: flex;
-  justify-content: center;
-  flex-direction: column; }
-
-.genreCol {
-  background-color: blue; }
-
-.genreCol {
-  background-color: blue;
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px; }
-
-.genrePage {
-  text-align: center; }
-
-.artistCol {
-  background-color: blue; }
-
 .artistCol {
   background-color: blue;
   display: flex;
   justify-content: center;
-  margin-bottom: 20px; }
+  margin-bottom: 20px;
+  height: 200px; }
 
 .artistPage {
-  text-align: center; }
-
-.albumCol {
-  background-color: purple; }
-
-.albumCol {
-  background-color: blue;
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px; }
-
-.albumPage {
   text-align: center; }
 
 .mobile {
@@ -90,21 +59,5 @@ a:hover,
 a:active,
 a:focus {
   background: #e7e7e7; }
-
-.desktop {
-  display: block;
-  overflow: hidden; }
-
-.desktop a {
-  width: 25%;
-  float: left;
-  border-right: 1px solid #ddd;
-  box-sizing: border-box; }
-
-.desktop a:last-child {
-  border-right: none; }
-
-article {
-  padding: 0 30px 15px; }
 
 /*# sourceMappingURL=styles.css.map */

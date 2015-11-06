@@ -4,6 +4,7 @@ $(document).ready(function(){
 
 var page = {
 
+
   init: function(){
     page.styling();
     page.events();

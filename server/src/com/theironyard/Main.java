@@ -245,13 +245,12 @@ public class Main {
                 "/get-artist",
                 ((request, response) -> {
                     String id = request.queryParams("id");
-                    try{
+                    try {
                         int idNum = Integer.valueOf(id);
                         JsonSerializer serializer = new JsonSerializer();
                         String json = serializer.serialize(selectArtist(connection, idNum));
                         return json;
-                    }
-                    catch (Exception e){
+                    } catch (Exception e) {
 
                     }
                     return "";
@@ -273,13 +272,12 @@ public class Main {
                 "/get-album",
                 ((request, response) -> {
                     String id = request.queryParams("id");
-                    try{
+                    try {
                         int idNum = Integer.valueOf(id);
                         JsonSerializer serializer = new JsonSerializer();
                         String json = serializer.serialize(selectAlbum(connection, idNum));
                         return json;
-                    }
-                    catch (Exception e){
+                    } catch (Exception e) {
 
                     }
                     return "";
@@ -341,7 +339,7 @@ public class Main {
                     String artistImage = request.queryParams("artistImage");
                     try{
                         int genreIdNum = Integer.valueOf(genreId);
-                        insertArtist(connection, artistName, genreIdNum,artistImage);
+                        insertArtist(connection, artistName, genreIdNum, artistImage);
                     }catch (Exception e){
 
                     }
@@ -381,6 +379,17 @@ public class Main {
                     return "";
                 })
         );//End of Spark.post() /create-entry (ALL FIELDS AT ONCE)
+
+
+        //SPARK.POST ----> /logout (Logout from session)
+        Spark.post(
+                "/logout",
+                ((request, response) -> {
+                    Session session = request.session();
+                    session.invalidate();
+                    return "";
+                })
+        );//End of Spark.post() "/logout""
 
         /*
         if(selectUser(connection, null) == null){
