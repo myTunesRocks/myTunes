@@ -1,11 +1,42 @@
+.loginForm {
+  display: flex;
+  justify-content: center;
+  flex-direction: column; }
+
+.genreCol {
+  background-color: blue; }
+
+.genreCol {
+  background-color: blue;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px; }
+
+.genrePage {
+  text-align: center; }
+
+.artistCol {
+  background-color: blue; }
+
 .artistCol {
   background-color: blue;
   display: flex;
   justify-content: center;
-  margin-bottom: 20px;
-  height: 200px; }
+  margin-bottom: 20px; }
 
 .artistPage {
+  text-align: center; }
+
+.albumCol {
+  background-color: purple; }
+
+.albumCol {
+  background-color: blue;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px; }
+
+.albumPage {
   text-align: center; }
 
 /*# sourceMappingURL=styles.css.map */
