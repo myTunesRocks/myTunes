@@ -1,67 +1,80 @@
 var createContent = {
 
-  genreUrl: '/get-genre',
-  artistUrl: '/get-artist',
-  albumUrl: '/get-album',
-
   init: function(){
     createContent.events();
-    createContent.styling();
-  },
-
-  events: function(){
-    submitGenre();
-    submitArtist();
-    submitAlbum();
   },
 
   styling: function(){
+  },
 
+  events: function(){
+    createContent.submitGenre();
+    createContent.submitArtist();
+    createContent.submitAlbum();
   },
 
   submitGenre: function(){
-    $('button').on('submit', function(){
-      $.ajax({
-        url: page.genreUrl,
-        method: 'POST',
-        success: function(data){
-
-        },
-        failure: function(data){
-
-        },
-      });
-    });
+    // $('body').on('click','.sampleBtn' ,function(event){
+    //   event.preventDefault();
+    //     var genreData = {
+    //       genreName: $('input[name="name"]').val(),
+    //       genreImage: $('input[name="image"]').val()
+    //       /// THESE ARE THE INPUT BOXES FOR GENRE FORM SUBMITTAL //
+    //     };
+    //     $.ajax({
+    //     url: '/create-genre',
+    //     method: 'POST',
+    //     data: genreData,
+    //     success: function(data){
+    //       console.log('SUCCESS', data)
+    //       loadContent.init();
+    //     },
+    //     failure: function(data){
+    //
+    //     },
+    //
+    //   });
+    // });
   },
 
   submitArtist: function(){
-    $('button').on('submit', function(){
+    $('body').on('click','.sampleBtn', function(event){
+      event.preventDefault();
+      var artistData = {
+        genreId: 1,
+        artistName: $('input[name="name"]').val(),
+        artistImage: $('input[name="image"]').val()
+        /// THESE ARE THE INPUT BOXES FOR GENRE FORM SUBMITTAL //
+      };
       $.ajax({
-        url: page.genreUrl,
+        url: '/create-artist',
         method: 'POST',
+        data: artistData,
         success: function(data){
+          console.log('SUCCESS', data)
 
         },
         failure: function(data){
-
+          console.log('FAILURE', data)
         },
       });
     });
   },
 
   submitAlbum: function(){
-    $('button').on('submit', function(){
-      $.ajax({
-        url: page.albumUrl,
-        method: 'POST',
-        success: function(data){
-
-        },
-        failure: function(data){
-
-        },
-      });
-    });
+    // $('button').on('submit', function(){
+    //   $.ajax({
+    //     url: '/create-album',
+    //     method: 'POST',
+    //     success: function(data){
+    //
+    //     },
+    //     failure: function(data){
+    //
+    //     },
+    //   });
+    // });
   },
+
 
 };
