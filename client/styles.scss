@@ -1,3 +1,4 @@
+
 body {
   background-color: #f6f1ed;
 }
@@ -159,7 +160,7 @@ a:focus {
   margin-right: 1px;
 }
 
-.genreCol {
+.genreCol, .artistCol, .albumCol {
   text-align: center;
   p {
     color: white;
@@ -167,12 +168,15 @@ a:focus {
     font-weight: bold;
     font-family: 'Alegreya Sans SC', sans-serif;
   }
+
+
+}
 .record {
   width: 200px;
   height: 200px;
   clear: both;
   }
-}
+
 
 footer {
   border-top: 2px solid #16174f;

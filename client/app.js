@@ -19,21 +19,49 @@ var page = {
     login.init();
   },
   showAndHide: function(){
+
+
+
     ////HAMBURGER BUTTON////
    $('.hamburger').click(function() {
-   $(this).toggleClass('expanded').siblings('div').slideToggle();
+     $(this).toggleClass('expanded').siblings('div').slideToggle();
    });
    $('body').on('click', '.addMusic', function(event){
      event.preventDefault();
      $('form').toggleClass('hidden');
-     $('.container').toggle('hidden');
+     $('.hamburger').toggleClass('expanded').siblings('div').slideToggle();
+     $('.genrePage').addClass('hidden');
+     $('.artistPage').addClass('hidden');
+     $('.albumPage').addClass('hidden');
+
    });
+   ////LOGO CLICK LINK //////
+   $('.logo').on('click', function(){
+     $('.genrePage').removeClass('hidden');
+     $('.albumPage').addClass('hidden');
+     $('.artistPage').addClass('hidden');
+     $('.addMusicForm').addClass('hidden');
+   });
+
+    /////NEW FORM BUTTONS//////
+    $('.newGenreButton').on('click', function(){
+      $('.hideGenreForm').toggleClass('hidden');
+      $('.newGenreButton').addClass('hidden');
+      $("#selectGenre").addClass('hidden');
+    });
+    $('.newArtistButton').on('click', function(){
+      $('.hideArtistForm').toggleClass('hidden');
+      $('.newArtistButton').addClass('hidden');
+      $('#selectArtist').addClass('hidden');
+    });
+
 
     ///LOGIN///
     $('.landingPage').on('click', '.loginButton', function(event){
       event.preventDefault();
       $('.landingPage').addClass('hidden');
       $('.genrePage').removeClass('hidden');
+
     });
 
     ///HIDE GENRE ACCESS ARTIST///

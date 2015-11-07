@@ -295,7 +295,7 @@ public class Main {
                     String password = request.queryParams("password");
 
                     if (username.isEmpty() || password.isEmpty()) {
-                        response.redirect("/login");
+                        Spark.halt(403);
                     }
 
                     User user = selectUser(connection, username);
@@ -306,7 +306,7 @@ public class Main {
                         insertUser(connection, username, password);
                     }
                     else if (!password.equals(user.password)) {
-                        response.redirect("/login");
+                        Spark.halt(403);
                     }
 
                     Session session = request.session();
@@ -401,9 +401,9 @@ public class Main {
         */
 
         if (selectGenres(connection).size() == 0) {
-            insertEntry(connection, "Metal;", "Metal Image", "Slipknot", "Slipknot Image", "Iowa", "Iowa Image");
-            insertEntry(connection, "Pop", "Pop Image", "Taylor Swift", "Swift Image", "1989", "1989 Image");
-            insertEntry(connection, "Country", "Country Image", "Blake Shelton", "Blake Image", "Bring Back the Sunshine", "Sunshine Image");
+            insertEntry(connection, "Metal;", "http://logonoid.com/images/dethklok-logo.png", "Slipknot", "http://rocketdock.com/images/screenshots/Slipknot_Logo.png", "Iowa", "http://vignette4.wikia.nocookie.net/slipknot/images/2/28/Iowa_(White_Cover).jpg/revision/latest?cb=20101227004932");
+            insertEntry(connection, "Pop", "http://www.dezign.fr/images/pop-music1.png", "Taylor Swift", "http://orig11.deviantart.net/0093/f/2011/253/f/6/taylor_swift_png_002_by_xliketoysoldiers-d49hrhf.png", "1989", "https://upload.wikimedia.org/wikipedia/en/f/f6/Taylor_Swift_-_1989.png");
+            insertEntry(connection, "Country", "country image", "Blake Shelton", "Blake Image", "Bring Back the Sunshine", "Sunshine Image");
         }
 
 
