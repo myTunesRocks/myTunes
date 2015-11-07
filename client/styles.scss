@@ -162,18 +162,37 @@ a:focus {
     font-weight: bold;
     font-family: 'Alegreya Sans SC', sans-serif;
   }
+}
 
 .artistPara {
   padding-left: 5%;
 }
 
-
-}
 .record {
   width: 200px;
   height: 200px;
   clear: both;
   }
+
+.addMusicForm {
+  font-family: 'Alegreya Sans SC', sans-serif;
+  width: 500px;
+  margin-top: 5%;
+  label {
+    font-family: 'Alegreya Sans SC', sans-serif;
+    font-size: 40px;
+    color: #963019;
+  }
+  button {
+    background-color: #16174f;
+    color: white;
+    border-color: #16174f;
+    border-radius: 5px;
+    margin-top: 5px;
+  }
+}
+
+
 
 
 footer {
