@@ -132,13 +132,29 @@ a:focus {
     font-size: 26px;
     font-weight: bold;
     font-family: 'Alegreya Sans SC', sans-serif; }
-  .genreCol .artistPara, .artistCol .artistPara, .albumCol .artistPara {
-    padding-left: 5%; }
+
+.artistPara {
+  padding-left: 5%; }
 
 .record {
   width: 200px;
   height: 200px;
   clear: both; }
+
+.addMusicForm {
+  font-family: 'Alegreya Sans SC', sans-serif;
+  width: 500px;
+  margin-top: 5%; }
+  .addMusicForm label {
+    font-family: 'Alegreya Sans SC', sans-serif;
+    font-size: 40px;
+    color: #963019; }
+  .addMusicForm button {
+    background-color: #16174f;
+    color: white;
+    border-color: #16174f;
+    border-radius: 5px;
+    margin-top: 5px; }
 
 footer {
   margin-top: 25%;
