@@ -17,16 +17,10 @@ body {
   }
 }
 
-.artistCol {
-  background-color: blue;
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
-  height: 200px;
-}
-
-.artistPage{
-  text-align: center;
+.favorite {
+  float: right;
+  margin-top: 3px;
+  font-size: 20px;
 }
 
 .landingPage {
@@ -169,6 +163,10 @@ a:focus {
     font-family: 'Alegreya Sans SC', sans-serif;
   }
 
+.artistPara {
+  padding-left: 5%;
+}
+
 
 }
 .record {
@@ -179,6 +177,7 @@ a:focus {
 
 
 footer {
+  margin-top: 25%;
   border-top: 2px solid #16174f;
   color: #16174f;
   font-size: 14px;
