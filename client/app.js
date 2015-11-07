@@ -8,6 +8,7 @@ var page = {
   init: function(){
     page.styling();
     page.events();
+
   },
   styling: function(){
     loadContent.init();
@@ -15,13 +16,18 @@ var page = {
   events: function(){
     createContent.init();
     page.showAndHide();
+    login.init();
   },
   showAndHide: function(){
     ////HAMBURGER BUTTON////
    $('.hamburger').click(function() {
    $(this).toggleClass('expanded').siblings('div').slideToggle();
    });
-
+   $('body').on('click', '.addMusic', function(event){
+     event.preventDefault();
+     $('form').toggleClass('hidden');
+     $('.container').toggle('hidden');
+   });
 
     ///LOGIN///
     $('.landingPage').on('click', '.loginButton', function(event){

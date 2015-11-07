@@ -20,6 +20,7 @@ var loadContent = {
         loadGenreData = '';
         var genreTemplate = _.template(templates.genreTmpl);
         _.each(newData, function(el, idx, array){
+          $('#selectGenre').append('<option>' + el.genreName + '</option>')
           loadGenreData += genreTemplate(el);
           console.log(el)
             ///THIS IS WHERE THE GENRE TEMPLATE GOES //
@@ -41,12 +42,16 @@ var loadContent = {
       success: function(data){
         console.log('SUCCESS LOAD ARTIST', JSON.parse(data));
         newData = JSON.parse(data);
+        _.each(newData, function(el){
+          $('#selectArtist').append('<option>' + el.artistName + '</option>');
+        });
         var artistTemplate = _.template(templates.artistTmpl);
         loadArtistData = '';
         var artistsWithGenre = _.filter(newData, function(el){
           return el.genreId === genreID
         });
         _.each(artistsWithGenre, function(el, idx, arr){
+          $('#selectArtist').append('<option>' + el.image + '</option>');
           loadArtistData += artistTemplate(el);
           console.log(el)
             ///THIS IS WHERE THE ARTIST TEMPLATE GOES //
