@@ -17,7 +17,8 @@ var login = {
         console.log('SUCCESS', data);
       },
       failure: function(data){
-        console.log('FAILURE', data)
+        console.log('FAILURE', data);
+        alert('blue');
       }
     });
   });
