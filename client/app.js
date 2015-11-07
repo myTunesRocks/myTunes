@@ -33,7 +33,6 @@ var page = {
      $('.genrePage').addClass('hidden');
      $('.artistPage').addClass('hidden');
      $('.albumPage').addClass('hidden');
-
    });
    ////LOGO CLICK LINK //////
    $('.logo').on('click', function(){
@@ -61,7 +60,6 @@ var page = {
       event.preventDefault();
       $('.landingPage').addClass('hidden');
       $('.genrePage').removeClass('hidden');
-
     });
 
     ///HIDE GENRE ACCESS ARTIST///
