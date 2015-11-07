@@ -5,21 +5,17 @@ body {
   color: #16174f;
   display: inline-block;
   font-size: 100px; }
+
 .logoInfo h1 {
   color: #16174f;
   display: inline-block;
   font-size: 50px;
   font-family: 'Monoton', cursive; }
 
-.artistCol {
-  background-color: blue;
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
-  height: 200px; }
-
-.artistPage {
-  text-align: center; }
+.favorite {
+  float: right;
+  margin-top: 3px;
+  font-size: 20px; }
 
 .landingPage {
   width: 500px;
@@ -42,7 +38,9 @@ body {
   margin-top: 10px;
   font-family: 'Alegreya Sans SC', sans-serif; }
 
-.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
   color: #fff;
   background-color: #16174f;
   border-color: #16174f; }
@@ -136,6 +134,8 @@ a:focus {
     font-size: 26px;
     font-weight: bold;
     font-family: 'Alegreya Sans SC', sans-serif; }
+  .genreCol .artistPara, .artistCol .artistPara, .albumCol .artistPara {
+    padding-left: 5%; }
 
 .record {
   width: 200px;
@@ -143,6 +143,7 @@ a:focus {
   clear: both; }
 
 footer {
+  margin-top: 25%;
   border-top: 2px solid #16174f;
   color: #16174f;
   font-size: 14px; }
@@ -152,5 +153,3 @@ footer {
     margin-top: 10px;
     margin-bottom: 10px;
     font-weight: bold; }
-
-/*# sourceMappingURL=styles.css.map */
