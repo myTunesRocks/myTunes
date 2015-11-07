@@ -5,7 +5,6 @@ body {
   color: #16174f;
   display: inline-block;
   font-size: 100px; }
-
 .logoInfo h1 {
   color: #16174f;
   display: inline-block;
@@ -43,9 +42,7 @@ body {
   margin-top: 10px;
   font-family: 'Alegreya Sans SC', sans-serif; }
 
-.btn-primary:hover,
-.btn-primary:focus,
-.btn-primary:active {
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
   color: #fff;
   background-color: #16174f;
   border-color: #16174f; }
@@ -132,17 +129,18 @@ a:focus {
   height: 20px;
   margin-right: 1px; }
 
-.genreCol {
+.genreCol, .artistCol, .albumCol {
   text-align: center; }
-  .genreCol p {
+  .genreCol p, .artistCol p, .albumCol p {
     color: white;
     font-size: 26px;
     font-weight: bold;
     font-family: 'Alegreya Sans SC', sans-serif; }
-  .genreCol .record {
-    width: 200px;
-    height: 200px;
-    clear: both; }
+
+.record {
+  width: 200px;
+  height: 200px;
+  clear: both; }
 
 footer {
   border-top: 2px solid #16174f;
@@ -154,3 +152,5 @@ footer {
     margin-top: 10px;
     margin-bottom: 10px;
     font-weight: bold; }
+
+/*# sourceMappingURL=styles.css.map */
