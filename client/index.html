@@ -5,19 +5,26 @@
   <title>myTunes</title>
 
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Monoton' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:500,400' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <span class = 'glyphicon glyphicon-cd'></span>
   <nav class="mobile">
    <button class='hamburger'></button>
    <div>
-     <a class = 'addMusic' href="#">Add Music</a>
-     <a class = 'favorites' href="#">Favorites</a>
-     <a class = 'logout' href="#">Logout</a>
+
+     <a class = 'addMusic' href="#"><span class="glyphicon glyphicon-music"></span>Add Music</a>
+     <a  class = 'favorites' href="#"><span class="glyphicon glyphicon-star"></span>Favorites</a>
+     <a class = 'logout' href="#"><i class="fa fa-hand-peace-o"></i>Logout</a>
+
    </div>
  </nav>
 <div class="container">
+  <div class="logoInfo">
+    <span class="glyphicon glyphicon-cd"></span><h1 class="logo">myTunes</h1>
+  </div>
   <!-- HAMBURGER NAV BAR -->
     <div class="landingPage">
       <div class="loginForm">
@@ -36,28 +43,41 @@
       <!-- ALBUMS APPEND HERE EZ -->
     </div>
 </div>
+
+<footer>
+  <p>&copy; 2015 myTunes</p>
+</footer>
+
 <form class = 'addMusicForm hidden' action="">
    <div class="formPage">
-     <div class="form-group">
+     <div id = "genreForm" class="form-group">
        <label for="genre">Genre</label>
          <select id="selectGenre" class="form-control" name="">
          </select>
-         <button type="button" name="button">New</button>
+         <div class="hideGenreForm hidden">
+           <input name = "genreName" type = "text" class="form-control" placeholder = "Enter Genre Name"></input>
+           <input name = "genreImage" type = "text" class="form-control" placeholder = "Enter Genre Image"></input>
+           <button class = "submitGenreButton" type="button" name="button">Submit</button>
+          </div>
+         <button class = "newGenreButton" type="button" name="button">New</button>
      </div>
-     <div class="form-group">
+     <div id = "artistForm"class="form-group">
        <label for="genre">Artists</label>
          <select id="selectArtist" class="form-control" name="">
          </select>
-         <button type="button" name="button">New</button>
+         <div class="hideArtistForm hidden">
+           <input name = "artistName" type = "text" class="form-control" placeholder = "Enter Artist Name"></input>
+           <input name = "artistImage" type = "text" class="form-control" placeholder = "Enter Artist Image"></input>
+           <button class = "submitArtistButton" type="button" name="button">Submit</button>
+         </div>
+         <button class="newArtistButton" type="button" name="button">New</button>
      </div>
-     <div class="form-group">
+     <div id = "albumForm" class="form-group">
        <label for="genre">Album</label>
-         <input name = "artistName" type = "text" id="selectAlbumName" class="form-control" placeholder = "Enter Album Name"></input>
-         <input name = "artistImage" type = "text" id="selectAlbumImage" class="form-control" placeholder = "Enter Album Image"></input>
-         <input name = "genreId" type = "text" id="selectAlbumImage" class="form-control" placeholder = "Enter Album Image"></input>
-         <button type="button" name="button">New</button>
+         <input name = "albumName" type = "text" class="form-control" placeholder = "Enter Album Name"></input>
+         <input name = "albumImage" type = "text" class="form-control" placeholder = "Enter Album Image"></input>
+         <button class = "submitAlbumButton" type="button" name="button">Submit</button>
      </div>
-     <button type="button" class = "submitForm" name="submit">Submit</button>
    </div>
 </form>
 

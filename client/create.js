@@ -14,7 +14,7 @@ var createContent = {
   },
 
   submitGenre: function(){
-    $('body').on('click','.blue' ,function(event){
+    $('body').on('click','.submitGenreButton' ,function(event){
       event.preventDefault();
         var genreData = {
           genreName: $('input[name="genreName"]').val(),
@@ -27,6 +27,11 @@ var createContent = {
         data: genreData,
         success: function(data){
           console.log('SUCCESS', data)
+          $('input[name="genreName"]').val('');
+          $('input[name="genreImage"]').val('');
+          $('.hideGenreForm').addClass('hidden');
+          $('.newGenreButton').removeClass('hidden');
+          $('#selectGenre').removeClass('hidden');
           loadContent.init();
         },
         failure: function(data){
@@ -38,13 +43,12 @@ var createContent = {
   },
 
   submitArtist: function(){
-    $('body').on('click','.submitForm', function(event){
+    $('body').on('click','.submitArtistButton', function(event){
       event.preventDefault();
       var artistData = {
         artistName: $('input[name="artistName"]').val(),
         artistImage: $('input[name="artistImage"]').val(),
-        genreId: $('input[name="genreId"]').val()
-
+        genreId: $('#selectGenre option:selected').data('index')
         /// THESE ARE THE INPUT BOXES FOR GENRE FORM SUBMITTAL //
       };
       $.ajax({
@@ -53,7 +57,12 @@ var createContent = {
         data: artistData,
         success: function(data){
           console.log('SUCCESS', data)
-          $('input[name="artistName"]').val('')
+          $('input[name="artistName"]').val('');
+          $('input[name="artistImage"]').val('');
+          $('.hideArtistForm').addClass('hidden');
+          $('.newArtistButton').removeClass('hidden');
+          $('#selectArtist').removeClass('hidden');
+          loadContent.init();
         },
         failure: function(data){
           console.log('FAILURE', data)
@@ -63,20 +72,25 @@ var createContent = {
   },
 
   submitAlbum: function(){
-    $('button').on('submit', function(){
+    $('body').on('click', '.submitAlbumButton', function(){
       event.preventDefault();
-      var artistData = {
+      var albumData = {
         albumName: $('input[name="albumName"]').val(),
         albumImage: $('input[name="albumImage"]').val(),
-        artistId: $('input[name="albumId"]').val()
+        artistId: $('#selectArtist option:selected').data('index')
+      }
       $.ajax({
         url: '/create-album',
         method: 'POST',
+        data: albumData,
         success: function(data){
-
+          console.log('SUCCESS', data);
+          $('input[name="albumName"]').val('');
+          $('input[name="albumImage"]').val('');
+          $('input[name="albumId"]').val('');
         },
         failure: function(data){
-
+          console.log('FAILURE', data)
         },
       });
     });

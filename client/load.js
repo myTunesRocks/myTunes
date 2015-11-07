@@ -20,9 +20,8 @@ var loadContent = {
         loadGenreData = '';
         var genreTemplate = _.template(templates.genreTmpl);
         _.each(newData, function(el, idx, array){
-          $('#selectGenre').append('<option>' + el.genreName + '</option>')
+          $('#selectGenre').append('<option data-index= ' + el.id + '>' + el.genreName + '</option>')
           loadGenreData += genreTemplate(el);
-          console.log(el)
             ///THIS IS WHERE THE GENRE TEMPLATE GOES //
         });
         $('.genrePage').html('');
@@ -43,7 +42,7 @@ var loadContent = {
         console.log('SUCCESS LOAD ARTIST', JSON.parse(data));
         newData = JSON.parse(data);
         _.each(newData, function(el){
-          $('#selectArtist').append('<option>' + el.artistName + '</option>');
+          $('#selectArtist').append('<option data-index=' + el.id +'>' + el.artistName + '</option>');
         });
         var artistTemplate = _.template(templates.artistTmpl);
         loadArtistData = '';

@@ -29,6 +29,19 @@ var page = {
      $('.container').toggle('hidden');
    });
 
+    /////NEW FORM BUTTONS//////
+    $('.newGenreButton').on('click', function(){
+      $('.hideGenreForm').toggleClass('hidden');
+      $('.newGenreButton').addClass('hidden');
+      $("#selectGenre").addClass('hidden');
+    });
+    $('.newArtistButton').on('click', function(){
+      $('.hideArtistForm').toggleClass('hidden');
+      $('.newArtistButton').addClass('hidden');
+      $('#selectArtist').addClass('hidden');
+    });
+
+
     ///LOGIN///
     $('.landingPage').on('click', '.loginButton', function(event){
       event.preventDefault();
