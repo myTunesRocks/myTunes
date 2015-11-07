@@ -5,6 +5,9 @@
   <title>myTunes</title>
 
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Monoton' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:500,400' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -12,12 +15,17 @@
   <nav class="mobile">
    <button class='hamburger'></button>
    <div>
-     <a class = 'addMusic' href="#">Add Music</a>
-     <a class = 'favorites' href="#">Favorites</a>
-     <a class = 'logout' href="#">Logout</a>
+
+     <a class = 'addMusic' href="#"><span class="glyphicon glyphicon-music"></span>Add Music</a>
+     <a  class = 'favorites' href="#"><span class="glyphicon glyphicon-star"></span>Favorites</a>
+     <a class = 'logout' href="#"><i class="fa fa-hand-peace-o"></i>Logout</a>
+
    </div>
  </nav>
 <div class="container">
+  <div class="logoInfo">
+    <span class="glyphicon glyphicon-cd"></span><h1 class="logo">myTunes</h1>
+  </div>
   <!-- HAMBURGER NAV BAR -->
     <div class="landingPage">
       <div class="loginForm">
@@ -36,6 +44,11 @@
       <!-- ALBUMS APPEND HERE EZ -->
     </div>
 </div>
+
+<footer>
+  <p>&copy; 2015 myTunes</p>
+</footer>
+
 <form class = 'addMusicForm hidden' action="">
    <div class="formPage">
      <div class="form-group">
@@ -60,6 +73,7 @@
    </div>
 </form>
 
+>>>>>>> 09d94132a04f9522e2f4fdf03f594fd699c54ee4
 
 <script src="bower_components/jquery/dist/jquery.js" charset="utf-8"></script>
 <script src="bower_components/underscore/underscore.js" charset="utf-8"></script>
