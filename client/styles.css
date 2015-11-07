@@ -5,7 +5,6 @@ body {
   color: #16174f;
   display: inline-block;
   font-size: 100px; }
-
 .logoInfo h1 {
   color: #16174f;
   display: inline-block;
@@ -19,7 +18,8 @@ body {
 
 .landingPage {
   width: 500px;
-  margin: 15% 30%;
+  margin: 0 auto;
+  margin-top: 12%;
   padding: 50px;
   background-color: white;
   border-radius: 5px; }
@@ -38,9 +38,7 @@ body {
   margin-top: 10px;
   font-family: 'Alegreya Sans SC', sans-serif; }
 
-.btn-primary:hover,
-.btn-primary:focus,
-.btn-primary:active {
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
   color: #fff;
   background-color: #16174f;
   border-color: #16174f; }
@@ -153,3 +151,5 @@ footer {
     margin-top: 10px;
     margin-bottom: 10px;
     font-weight: bold; }
+
+/*# sourceMappingURL=styles.css.map */
