@@ -19,14 +19,28 @@ var page = {
     login.init();
   },
   showAndHide: function(){
+
+
+
     ////HAMBURGER BUTTON////
    $('.hamburger').click(function() {
-   $(this).toggleClass('expanded').siblings('div').slideToggle();
+     $(this).toggleClass('expanded').siblings('div').slideToggle();
    });
    $('body').on('click', '.addMusic', function(event){
      event.preventDefault();
      $('form').toggleClass('hidden');
-     $('.container').toggle('hidden');
+     $('.hamburger').toggleClass('expanded').siblings('div').slideToggle();
+     $('.genrePage').addClass('hidden');
+     $('.artistPage').addClass('hidden');
+     $('.albumPage').addClass('hidden');
+
+   });
+   ////LOGO CLICK LINK //////
+   $('.logo').on('click', function(){
+     $('.genrePage').removeClass('hidden');
+     $('.albumPage').addClass('hidden');
+     $('.artistPage').addClass('hidden');
+     $('.addMusicForm').addClass('hidden');
    });
 
     /////NEW FORM BUTTONS//////
@@ -47,6 +61,7 @@ var page = {
       event.preventDefault();
       $('.landingPage').addClass('hidden');
       $('.genrePage').removeClass('hidden');
+
     });
 
     ///HIDE GENRE ACCESS ARTIST///

@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <nav class="mobile">
+  <nav class="mobile hidden">
    <button class='hamburger'></button>
    <div>
 
@@ -42,44 +42,47 @@
     <div class="albumPage row hidden">
       <!-- ALBUMS APPEND HERE EZ -->
     </div>
-</div>
 
+
+  <div class="addMusicForm">
+      <form class = 'addMusicForm hidden' action="">
+         <div class="formPage">
+           <div id = "genreForm" class="form-group">
+             <label for="genre">Genre</label>
+               <select id="selectGenre" class="form-control" name="">
+               </select>
+               <div class="hideGenreForm hidden">
+                 <input name = "genreName" type = "text" class="form-control" placeholder = "Enter Genre Name"></input>
+                 <input name = "genreImage" type = "text" class="form-control" placeholder = "Enter Genre Image"></input>
+                 <button class = "submitGenreButton" type="button" name="button">Submit</button>
+                </div>
+               <button class = "newGenreButton" type="button" name="button">New</button>
+           </div>
+           <div id = "artistForm"class="form-group">
+             <label for="genre">Artists</label>
+               <select id="selectArtist" class="form-control" name="">
+               </select>
+               <div class="hideArtistForm hidden">
+                 <input name = "artistName" type = "text" class="form-control" placeholder = "Enter Artist Name"></input>
+                 <input name = "artistImage" type = "text" class="form-control" placeholder = "Enter Artist Image"></input>
+                 <button class = "submitArtistButton" type="button" name="button">Submit</button>
+               </div>
+               <button class="newArtistButton" type="button" name="button">New</button>
+           </div>
+           <div id = "albumForm" class="form-group">
+             <label for="genre">Album</label>
+               <input name = "albumName" type = "text" class="form-control" placeholder = "Enter Album Name"></input>
+               <input name = "albumImage" type = "text" class="form-control" placeholder = "Enter Album Image"></input>
+               <button class = "submitAlbumButton" type="button" name="button">Submit</button>
+           </div>
+         </div>
+      </form>
+    </div>
 <footer>
   <p>&copy; 2015 myTunes</p>
 </footer>
+</div>
 
-<form class = 'addMusicForm hidden' action="">
-   <div class="formPage">
-     <div id = "genreForm" class="form-group">
-       <label for="genre">Genre</label>
-         <select id="selectGenre" class="form-control" name="">
-         </select>
-         <div class="hideGenreForm hidden">
-           <input name = "genreName" type = "text" class="form-control" placeholder = "Enter Genre Name"></input>
-           <input name = "genreImage" type = "text" class="form-control" placeholder = "Enter Genre Image"></input>
-           <button class = "submitGenreButton" type="button" name="button">Submit</button>
-          </div>
-         <button class = "newGenreButton" type="button" name="button">New</button>
-     </div>
-     <div id = "artistForm"class="form-group">
-       <label for="genre">Artists</label>
-         <select id="selectArtist" class="form-control" name="">
-         </select>
-         <div class="hideArtistForm hidden">
-           <input name = "artistName" type = "text" class="form-control" placeholder = "Enter Artist Name"></input>
-           <input name = "artistImage" type = "text" class="form-control" placeholder = "Enter Artist Image"></input>
-           <button class = "submitArtistButton" type="button" name="button">Submit</button>
-         </div>
-         <button class="newArtistButton" type="button" name="button">New</button>
-     </div>
-     <div id = "albumForm" class="form-group">
-       <label for="genre">Album</label>
-         <input name = "albumName" type = "text" class="form-control" placeholder = "Enter Album Name"></input>
-         <input name = "albumImage" type = "text" class="form-control" placeholder = "Enter Album Image"></input>
-         <button class = "submitAlbumButton" type="button" name="button">Submit</button>
-     </div>
-   </div>
-</form>
 
 
 <script src="bower_components/jquery/dist/jquery.js" charset="utf-8"></script>
