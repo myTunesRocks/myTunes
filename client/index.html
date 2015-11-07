@@ -4,19 +4,24 @@
   <meta charset="UTF-8">
   <title>myTunes</title>
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Monoton' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:500,400' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <nav class="mobile">
    <button class='hamburger'>Toggle</button>
    <div>
-     <a href="#">Mobile 1</a>
-     <a href="#">Mobile 2</a>
-     <a href="#">Mobile 3</a>
-     <a href="#">Mobile 4</a>
+     <a href="#"><span class="glyphicon glyphicon-music"></span>Add Music</a>
+     <a href="#"><span class="glyphicon glyphicon-star"></span>Favorites</a>
+     <a href="#"><i class="fa fa-hand-peace-o"></i>Logout</a>
    </div>
  </nav>
 <div class="container">
+  <div class="logoInfo">
+    <span class="glyphicon glyphicon-cd"></span><h1 class="logo">myTunes</h1>
+  </div>
   <!-- HAMBURGER NAV BAR -->
     <div class="landingPage">
       <div class="loginForm">
@@ -36,7 +41,9 @@
     </div>
       <form class="hidden" action="">
 </div>
-
+<footer>
+  <p>&copy; 2015 myTunes</p>
+</footer>
 
 <script src="bower_components/jquery/dist/jquery.js" charset="utf-8"></script>
 <script src="bower_components/underscore/underscore.js" charset="utf-8"></script>

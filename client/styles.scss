@@ -1,3 +1,21 @@
+body {
+  background-color: #f6f1ed;
+}
+
+.logoInfo {
+  .glyphicon-cd {
+    color: #16174f;
+    display: inline-block;
+    font-size: 100px;
+  }
+   h1 {
+    color: #16174f;
+    display: inline-block;
+    font-size: 50px;
+    font-family: 'Monoton', cursive;
+  }
+}
+
 .artistCol {
   background-color: blue;
   display: flex;
@@ -5,10 +23,62 @@
   margin-bottom: 20px;
   height: 200px;
 }
+
 .artistPage{
   text-align: center;
 }
 
+.landingPage {
+  width: 500px;
+  margin: 15% 30%;
+  padding: 50px;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.loginForm input {
+  border: solid 1px gray;
+  border-radius: 5px;
+  padding: 10px;
+  margin-right: 10px;
+  font-family: 'Alegreya Sans SC', sans-serif;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #16174f;
+    border-color: #16174f;
+    margin-top: 10px;
+    font-family: 'Alegreya Sans SC', sans-serif;
+  }
+
+.btn-primary{
+  &:hover,
+  &:focus,
+  &:active {
+  color: #fff;
+  background-color: #16174f;
+  border-color: #16174f;
+  }
+}
+
+.col-md-4 {
+  background-color: rgba(0, 0, 0, .4);
+  width: 30%;
+  height: 300px;
+  padding: 10px;
+  margin: 10px;
+}
+
+.row {
+  margin-left: 10%;
+  h1 {
+    margin: 5% 0 2% 0;
+    font-family: 'Alegreya Sans SC', sans-serif;
+    font-size: 50px;
+    color: #963019;
+  }
+}
 
 ////////HAMBURGER//////////
 
@@ -20,9 +90,11 @@
  margin: 0;
  margin-right: 50px;
 }
+
 .mobile div {
  display: none;
 }
+
 .mobile button {
  position: absolute;
  top: 15px;
@@ -31,9 +103,7 @@
  left: 96%;
  text-indent: 200%;
  overflow: hidden;
- background: rgba(255, 255, 255, 0.8) url("http://i.imgur.com/vKRaKDX.png (563b)") center no-repeat;
- border: 1px solid #ddd;
- border-radius: 3px;
+ background: #f6f1ed url("http://i.imgur.com/vKRaKDX.png (563b)") center no-repeat;
  background-size: 80%;
  width: 30px;
  height: 30px;
@@ -41,6 +111,7 @@
  -webkit-transition: all 400ms ease;
  transition: all 400ms ease;
 }
+
 .mobile button.expanded {
  -webkit-transform: rotate(90deg);
      -ms-transform: rotate(90deg);
@@ -48,20 +119,71 @@
  background-color: transparent;
  border: 0;
 }
+
 .mobile a {
  display: block;
 }
+
 a {
- background: #eee;
+ background: #f6f1ed;
  text-align: center;
  padding: 20px 0;
  border-bottom: 1px solid #ddd;
  text-decoration: none;
  color: #222;
  font-weight: bold;
+ font-family: 'Alegreya Sans SC', sans-serif;
 }
+
 a:hover,
 a:active,
 a:focus {
- background: #e7e7e7 ;
+ background: white ;
+ text-decoration: none;
+ color: black;
+}
+
+.glyphicon-star {
+  color: #667467;
+  margin-right: 1px;
+}
+
+.glyphicon-music {
+  color: #963019;
+  margin-right: 1px;
+}
+
+.fa-hand-peace-o {
+  color: #16174f;
+  width: 20px;
+  height: 20px;
+  margin-right: 1px;
+}
+
+.genreCol {
+  text-align: center;
+  p {
+    color: white;
+    font-size: 26px;
+    font-weight: bold;
+    font-family: 'Alegreya Sans SC', sans-serif;
+  }
+.record {
+  width: 200px;
+  height: 200px;
+  clear: both;
+  }
+}
+
+footer {
+  border-top: 2px solid #16174f;
+  color: #16174f;
+  font-size: 14px;
+  p {
+    text-align: center;
+    font-family: 'Alegreya Sans SC', sans-serif;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
 }
