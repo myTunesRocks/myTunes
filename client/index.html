@@ -3,17 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <title>myTunes</title>
+
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <span class = 'glyphicon glyphicon-cd'></span>
   <nav class="mobile">
-   <button class='hamburger'>Toggle</button>
+   <button class='hamburger'></button>
    <div>
-     <a href="#">Mobile 1</a>
-     <a href="#">Mobile 2</a>
-     <a href="#">Mobile 3</a>
-     <a href="#">Mobile 4</a>
+     <a class = 'addMusic' href="#">Add Music</a>
+     <a class = 'favorites' href="#">Favorites</a>
+     <a class = 'logout' href="#">Logout</a>
    </div>
  </nav>
 <div class="container">
@@ -34,12 +35,35 @@
     <div class="albumPage row hidden">
       <!-- ALBUMS APPEND HERE EZ -->
     </div>
-      <form class="hidden" action="">
 </div>
+<form class = 'addMusicForm hidden' action="">
+   <div class="formPage">
+     <div class="form-group">
+       <label for="genre">Genre</label>
+         <select id="selectGenre" class="form-control" name="">
+         </select>
+         <button type="button" name="button">New</button>
+     </div>
+     <div class="form-group">
+       <label for="genre">Artists</label>
+         <select id="selectArtist" class="form-control" name="">
+         </select>
+         <button type="button" name="button">New</button>
+     </div>
+     <div class="form-group">
+       <label for="genre">Album</label>
+         <input type = "text" id="selectAlbumName" class="form-control" placeholder = "Enter Album Name"></input>
+         <input type = "text" id="selectAlbumImage" class="form-control" placeholder = "Enter Album Image"></input>
+         <button type="button" name="button">New</button>
+     </div>
+     <button type="button" name="submit">Submit</button>
+   </div>
+</form>
 
 
 <script src="bower_components/jquery/dist/jquery.js" charset="utf-8"></script>
 <script src="bower_components/underscore/underscore.js" charset="utf-8"></script>
+<script src="login.js" charset="utf-8"></script>
 <script src="templates.js" charset="utf-8"></script>
 <script src="load.js" charset="utf-8"></script>
 <script src="create.js" charset="utf-8"></script>
