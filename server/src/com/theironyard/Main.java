@@ -295,7 +295,7 @@ public class Main {
                     String password = request.queryParams("password");
 
                     if (username.isEmpty() || password.isEmpty()) {
-                        Spark.halt(403);
+                        response.redirect("/login");
                     }
 
                     User user = selectUser(connection, username);
@@ -306,7 +306,7 @@ public class Main {
                         insertUser(connection, username, password);
                     }
                     else if (!password.equals(user.password)) {
-                        Spark.halt(403);
+                        response.redirect("/login");
                     }
 
                     Session session = request.session();
