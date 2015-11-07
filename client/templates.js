@@ -6,7 +6,7 @@ var templates = {
   ].join(""),
 
   artistTmpl: [
-    '<div class="col-md-4 artistCol" data-genreId="<%= genreId %>" data-index="<%= id %>"><p><%= artistName %></p> <img class = "record" src ="<%= image %>">' + '</div>'
+    '<div class="col-md-4 artistCol" data-genreId="<%= genreId %>" data-index="<%= id %>"><p class="artistPara"><%= artistName %><span class="glyphicon favorite glyphicon-star"></span></p> <img class = "record" src ="<%= image %>">' + '</div>'
   ].join(""),
 
   albumTmpl:[
