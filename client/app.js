@@ -105,6 +105,7 @@ var page = {
 
   favorites: function(){
     $('body').on('click', '.favorites', function(){
+
       $('.hamburger').toggleClass('expanded').siblings('div').slideToggle();
       $('.favoritesPage').removeClass('hidden');
       $('.addMusicForm').addClass('hidden');
