@@ -128,7 +128,7 @@ public class MainTest {
         Main.insertUser(connection, "Duke", "password");
         User user = Main.selectUser(connection, "Duke");
         Main.insertEntry(connection, "Metal;", "http://logonoid.com/images/dethklok-logo.png", "Slipknot", "http://rocketdock.com/images/screenshots/Slipknot_Logo.png", "Iowa", "http://vignette4.wikia.nocookie.net/slipknot/images/2/28/Iowa_(White_Cover).jpg/revision/latest?cb=20101227004932");
-        Main.insertFavorite(connection, 1, 1);
+        Main.insertFavorite(connection, 1, 1, "Slipknot", "http://rocketdock.com/images/screenshots/Slipknot_Logo.png");
         ArrayList<Favorite> tempList =  Main.selectFavorites(connection, 1);
         endConnection(connection);
 

@@ -7,6 +7,17 @@ public class Favorite {
     int id;
     int userId;
     int artistId;
+    String artistName;
+    String image;
+
+    public String getArtistName() {
+        return artistName;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
     boolean isfav;
 
     public int getId() {
