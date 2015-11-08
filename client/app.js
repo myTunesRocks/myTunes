@@ -12,6 +12,7 @@ var page = {
   },
   styling: function(){
     loadContent.init();
+    loadFavorites.init();
   },
   events: function(){
     createContent.init();
