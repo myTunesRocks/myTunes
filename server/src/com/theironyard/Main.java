@@ -207,17 +207,17 @@ public class Main {
     //SELECT FAVORITES
     public static ArrayList<Favorite> selectFavorites(Connection connection, int userId) throws SQLException{
         ArrayList<Favorite> favoriteArrayList = new ArrayList<>();
-        PreparedStatement statement = connection.prepareStatement("SELECT * FROM favorites INNER JOIN users ON favorites.user_id = users.id WHERE is_favorite = true AND users.id = ?");
+        PreparedStatement statement = connection.prepareStatement("SELECT * FROM favorites INNER JOIN users ON favorites.user_id = users.id WHERE favorites.is_favorite = true AND users.id = ?");
         statement.setInt(1, userId);
         ResultSet favoritesResult = statement.executeQuery();
         while(favoritesResult.next()){
             Favorite tempFavorite = new Favorite();
-            tempFavorite.id = favoritesResult.getInt("id");
-            tempFavorite.userId = favoritesResult.getInt("user_id");
-            tempFavorite.artistName = favoritesResult.getString("artist_name");
-            tempFavorite.artistId = favoritesResult.getInt("artist_id");
-            tempFavorite.image = favoritesResult.getString("image");
-            tempFavorite.isfav = favoritesResult.getBoolean("is_favorite");
+            tempFavorite.id = favoritesResult.getInt("favorites.id");
+            tempFavorite.userId = favoritesResult.getInt("favorites.user_id");
+            tempFavorite.artistName = favoritesResult.getString("favorites.artist_name");
+            tempFavorite.artistId = favoritesResult.getInt("favorites.artist_id");
+            tempFavorite.image = favoritesResult.getString("favorites.image");
+            tempFavorite.isfav = favoritesResult.getBoolean("favorites.is_favorite");
             favoriteArrayList.add(tempFavorite);
         }
         return favoriteArrayList;
