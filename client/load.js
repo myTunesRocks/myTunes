@@ -98,7 +98,7 @@ var loadContent = {
             el.image = 'record_with_needle_darkGreen.png'
           }
           loadAlbumData += albumTemplate(el);
-          console.log(el)
+          console.log('ALBUM DATA', el)
           ///THIS IS WHERE THE ALBUM TEMPLATE GOES //
         });
         $('.albumPage').html('');
