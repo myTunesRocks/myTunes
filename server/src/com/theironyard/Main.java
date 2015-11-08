@@ -432,7 +432,7 @@ public class Main {
                 "/create-favorite",
                 ((request1, response1) -> {
                     Session session = request1.session();
-                    String username = request1.attribute("username");
+                    String username = session.attribute("username");
                     User me = selectUser(connection, username);
                     int userId = me.id;
 
