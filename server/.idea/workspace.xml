@@ -36,8 +36,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/theironyard/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="4.111354">
-              <caret line="434" column="45" selection-start-line="434" selection-start-column="45" selection-end-line="434" selection-end-column="45" />
+            <state vertical-scroll-proportion="0.47598255">
+              <caret line="472" column="43" selection-start-line="472" selection-start-column="43" selection-end-line="472" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -712,7 +712,13 @@
       <option name="project" value="LOCAL" />
       <updated>1447010282596</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Select Favorites with username (User Session)">
+      <created>1447010498412</created>
+      <option name="number" value="00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1447010498412</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1058,8 +1064,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/theironyard/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="4.111354">
-          <caret line="434" column="45" selection-start-line="434" selection-start-column="45" selection-end-line="434" selection-end-column="45" />
+        <state vertical-scroll-proportion="0.47598255">
+          <caret line="472" column="43" selection-start-line="472" selection-start-column="43" selection-end-line="472" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
