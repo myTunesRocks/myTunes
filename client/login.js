@@ -20,11 +20,13 @@ var login = {
       success: function(data){
         console.log('SUCCESS', data);
         $('.mobile').removeClass('hidden');
+        $('.back').removeClass('hidden');
       },
       error: function(data){
         console.log('FAILURE', data);
         $('.landingPage').removeClass('hidden');
         $('.genrePage').addClass('hidden');
+
         $('input[name="username"]').val('INVALID USERNAME');
         $('input[name="password"]').val('OR PASSWORD');
       }
