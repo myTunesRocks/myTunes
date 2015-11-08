@@ -8,7 +8,7 @@ var loadFavorites = {
   //////POSTING FAVORITES/////
   events: function(){
     $.ajax({
-      url: '/GET-favorites',
+      url: '/get-favorites',
       method: 'GET',
       success: function(data){
         console.log('SUCCESS', data);
@@ -29,7 +29,7 @@ var loadFavorites = {
   /////GETTING FAVORTIES/////
   styling: function(){
     $.ajax({
-      url: '/favorites',
+      url: '/create-favorite',
       method: 'POST',
       success: function(data){
         console.log('SUCCESS', data)
