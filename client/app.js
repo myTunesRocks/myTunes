@@ -74,7 +74,6 @@ var page = {
       $('.landingPage').addClass('hidden');
       $('.genrePage').removeClass('hidden');
       $('.genrePage').addClass('active');
-      loadFavorites.init();
     });
 
     ///HIDE GENRE ACCESS ARTIST///
@@ -105,7 +104,6 @@ var page = {
 
   favorites: function(){
     $('body').on('click', '.favorites', function(){
-
       $('.hamburger').toggleClass('expanded').siblings('div').slideToggle();
       $('.favoritesPage').removeClass('hidden');
       $('.addMusicForm').addClass('hidden');
