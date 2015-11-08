@@ -9,16 +9,8 @@ public class Favorite {
     int artistId;
     String artistName;
     String image;
-
-    public String getArtistName() {
-        return artistName;
-    }
-
-    public String getImage() {
-        return image;
-    }
-
     boolean isfav;
+
 
     public int getId() {
         return id;
@@ -35,4 +27,13 @@ public class Favorite {
     public boolean isfav() {
         return isfav;
     }
+    public String getArtistName() {
+        return artistName;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+
 }
