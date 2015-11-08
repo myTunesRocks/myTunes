@@ -431,12 +431,15 @@ public class Main {
         Spark.post(
                 "/create-favorite",
                 ((request1, response1) -> {
-                    String userId = request1.queryParams("id");
+                    Session session = request1.session();
+                    String username = request1.attribute("username");
+                    User me = selectUser(connection, username);
+                    int userId = me.id;
+
                     String artistId = request1.queryParams("artistid");
                     try{
-                        int userIdNum = Integer.valueOf(userId);
                         int artistIdNum = Integer.valueOf(artistId);
-                        insertFavorite(connection, userIdNum, artistIdNum);
+                        insertFavorite(connection, userId, artistIdNum);
                     }
                     catch (Exception e){
 
