@@ -7,14 +7,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="67ff78df-d655-429b-8bc0-9638c91cb95a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../KnockOnSpotify.jar" afterPath="$PROJECT_DIR$/../KnockOnSpotify.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KnockOnSpotify_jar/KnockOnSpotify.jar" afterPath="$PROJECT_DIR$/out/artifacts/KnockOnSpotify_jar/KnockOnSpotify.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/KnockOnSpotify/com/theironyard/Main.class" afterPath="$PROJECT_DIR$/out/production/KnockOnSpotify/com/theironyard/Main.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/test/KnockOnSpotify/com/theironyard/MainTest.class" afterPath="$PROJECT_DIR$/out/test/KnockOnSpotify/com/theironyard/MainTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/theironyard/Favorite.java" afterPath="$PROJECT_DIR$/src/com/theironyard/Favorite.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/theironyard/Main.java" afterPath="$PROJECT_DIR$/src/com/theironyard/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/com/theironyard/MainTest.java" afterPath="$PROJECT_DIR$/test/com/theironyard/MainTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test.mv.db" afterPath="$PROJECT_DIR$/test.mv.db" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="KnockOnSpotify.iws" />
@@ -747,7 +739,13 @@
       <option name="project" value="LOCAL" />
       <updated>1447011700643</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Add Artist Name and Image to Favorite Class">
+      <created>1447015589999</created>
+      <option name="number" value="00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1447015589999</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -804,7 +802,8 @@
     <MESSAGE value="Select Favorites with username (User Session)" />
     <MESSAGE value="New Jar File" />
     <MESSAGE value="New Jar File with User getter for favorites" />
-    <option name="LAST_COMMIT_MESSAGE" value="New Jar File with User getter for favorites" />
+    <MESSAGE value="Add Artist Name and Image to Favorite Class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Artist Name and Image to Favorite Class" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1016,6 +1015,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
