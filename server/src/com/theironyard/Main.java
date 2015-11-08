@@ -207,7 +207,7 @@ public class Main {
     //SELECT FAVORITES
     public static ArrayList<Favorite> selectFavorites(Connection connection, int userId) throws SQLException{
         ArrayList<Favorite> favoriteArrayList = new ArrayList<>();
-        PreparedStatement statement = connection.prepareStatement("SELECT * FROM favorites INNER JOIN users ON favorites.user_id = users.id WHERE is_favorite = true AND user_id = ?");
+        PreparedStatement statement = connection.prepareStatement("SELECT * FROM favorites INNER JOIN users ON favorites.user_id = users.id WHERE is_favorite = true AND users.id = ?");
         statement.setInt(1, userId);
         ResultSet favoritesResult = statement.executeQuery();
         while(favoritesResult.next()){
