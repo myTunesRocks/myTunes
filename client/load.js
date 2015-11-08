@@ -21,9 +21,13 @@ var loadContent = {
         loadGenreData = '';
         var genreTemplate = _.template(templates.genreTmpl);
         _.each(newData, function(el, idx, array){
-          $('#selectGenre').append('<option data-index= ' + el.id + '>' + el.genreName + '</option>')
+          $('#selectGenre').append(
+            '<option data-index= '
+            + el.id + '>'
+            + el.genreName
+            + '</option>')
           console.log(el.image)
-          if(el.image === ''){
+          if(el.image === '' || el.image === undefined || el.image === null){
             el.image = 'record_with_needle_darkGreen.png'
           }
           loadGenreData += genreTemplate(el);
@@ -68,7 +72,7 @@ var loadContent = {
         });
 
         $('.artistPage').html('');
-        $('.artistPage').append('<h1>ARTISTS</h1>' + loadArtistData);
+        $('.artistPage').append('<h1>ARTISTS</h1>'+ "<div class = 'backArtist'><span class='glyphicon glyphicon-music'></span>Back</div>" + loadArtistData);
           ///ORANGE === ARTIST PAGE //
       },
       failure: function(data){
@@ -98,7 +102,7 @@ var loadContent = {
           ///THIS IS WHERE THE ALBUM TEMPLATE GOES //
         });
         $('.albumPage').html('');
-        $('.albumPage').append('<h1>ALBUMS</h1>' + loadAlbumData);
+        $('.albumPage').append('<h1>ALBUMS</h1>' + "<div class = 'backAlbum'><span class='glyphicon glyphicon-music'></span>Back</div>" + loadAlbumData);
         ///GREEN === ALBUM PAGE //
       },
       failure: function(data){

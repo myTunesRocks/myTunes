@@ -55,31 +55,48 @@ var page = {
     });
 
 
+    ///////BACK BUTTON IN HAMBURGER //////
+    $('body').on('click', '.backArtist', function(event){
+      $('.artistPage').addClass('hidden');
+      $('.genrePage').removeClass('hidden');
+    });
+    $('body').on('click', '.backAlbum', function(event){
+      $('.artistPage').removeClass('hidden');
+      $('.albumPage').addClass('hidden');
+    });
+
+
     ///LOGIN///
     $('.landingPage').on('click', '.loginButton', function(event){
       event.preventDefault();
       $('.landingPage').addClass('hidden');
       $('.genrePage').removeClass('hidden');
+      $('.genrePage').addClass('active');
     });
 
     ///HIDE GENRE ACCESS ARTIST///
     $('.genrePage').on('click', '.genreCol', function(event){
       console.log(this);
       $(this).parent('.genrePage').addClass('hidden');
+
       var genreID = $(this).data('index');
       console.log(genreID)
       loadContent.loadArtist(genreID);
       $('.artistPage').removeClass('hidden');
+      $('.artistPage').addClass('active')
     });
 
     ///HIDE ARTIST ACCESS ALBUM///
     $('.artistPage').on('click', '.artistCol', function(event){
       console.log(this);
       $(this).parent('.artistPage').addClass('hidden');
+      $(this).parent('.artistPage').removeClass('active');
       var artistID = $(this).data('index');
       console.log(artistID)
       loadContent.loadAlbum(artistID);
       $('.albumPage').removeClass('hidden');
+      $('.albumPage').addClass('active');
+
     });
 
   },
