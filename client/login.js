@@ -45,7 +45,10 @@ var login = {
         $('.genrePage').addClass('hidden');
         $('.albumPage').addClass('hidden');
         $('.artistPage').addClass('hidden');
+        $('.favoritesPage').addClass('hidden');
         $('.mobile').addClass('hidden');
+        $('.addMusicForm').addClass('hidden');
+
 
       },
       failure: function(data){
