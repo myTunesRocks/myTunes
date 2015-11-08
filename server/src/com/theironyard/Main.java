@@ -325,15 +325,9 @@ public class Main {
                     Session session = request1.session();
                     String username = session.attribute("username");
                     User me = selectUser(connection, username);
-                    try{
-                        JsonSerializer serializer = new JsonSerializer();
-                        String json = serializer.serialize(selectFavorites(connection,me.id));
-                        return json;
-
-                    }catch (Exception e){
-                        System.out.println(e.getMessage());
-                    }
-                    return "";
+                    JsonSerializer serializer = new JsonSerializer();
+                    String json = serializer.serialize(selectFavorites(connection, me.id));
+                    return json;
                 })
         );//End of Spark.get() /get-favorites (All favorites by User Id)
 
