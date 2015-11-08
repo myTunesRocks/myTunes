@@ -20,7 +20,7 @@ public class Main {
         //ADD ALBUMS TABLE WITH ARTIST ID, ALBUM NAME, ALBUM IMAGE
         statement.execute("CREATE TABLE IF NOT EXISTS albums (id IDENTITY, artist_id INT, album_name VARCHAR, album_image VARCHAR)");
         //ADD FAVORITES TABLE
-        statement.execute("CREATE TABLE IF NOT EXISTS favorites (id IDENTITY, user_id INT, artist_id INT, is_favorite BOOLEAN)");
+        statement.execute("CREATE TABLE IF NOT EXISTS favorites (id IDENTITY, user_id INT, artist_id INT, artist_name VARCHAR, image VARCHAR, is_favorite BOOLEAN)");
     }//End of createTables
 
     //ADD INSERT USER METHOD (CONNECTION, NAME, PASSWORD)
@@ -82,12 +82,14 @@ public class Main {
     }//End of insertAlbum
 
     //ADD INSERT FAVORITE
-    public static void insertFavorite(Connection connection, int userId, int artistId) throws SQLException {
+    public static void insertFavorite(Connection connection, int userId, int artistId, String artistName, String image) throws SQLException {
         boolean isFav = true;
-        PreparedStatement statement = connection.prepareStatement("INSERT INTO favorites VALUES(NULL, ?, ? ,?)");
+        PreparedStatement statement = connection.prepareStatement("INSERT INTO favorites VALUES(NULL, ?, ? ,?, ?,?)");
         statement.setInt(1, userId);
         statement.setInt(2, artistId);
-        statement.setBoolean(3, isFav);
+        statement.setString(3, artistName);
+        statement.setString(4, image);
+        statement.setBoolean(5, isFav);
         statement.execute();
     }//END OF INSERT FAVORITE
 
@@ -205,14 +207,16 @@ public class Main {
     //SELECT FAVORITES
     public static ArrayList<Favorite> selectFavorites(Connection connection, int userId) throws SQLException{
         ArrayList<Favorite> favoriteArrayList = new ArrayList<>();
-        PreparedStatement statement = connection.prepareStatement("SELECT * FROM favorites WHERE is_favorite = ?");
+        PreparedStatement statement = connection.prepareStatement("SELECT * FROM favorites INNER JOIN users ON favorites.user_id = users.id WHERE is_favorite = ?");
         statement.setInt(1, 1);
         ResultSet favoritesResult = statement.executeQuery();
         while(favoritesResult.next()){
             Favorite tempFavorite = new Favorite();
             tempFavorite.id = favoritesResult.getInt("id");
             tempFavorite.userId = favoritesResult.getInt("user_id");
+            tempFavorite.artistName = favoritesResult.getString("artist_name");
             tempFavorite.artistId = favoritesResult.getInt("artist_id");
+            tempFavorite.image = favoritesResult.getString("image");
             tempFavorite.isfav = favoritesResult.getBoolean("is_favorite");
             favoriteArrayList.add(tempFavorite);
         }
@@ -437,9 +441,11 @@ public class Main {
                     int userId = me.id;
 
                     String artistId = request1.queryParams("artistid");
+                    String artistName = request1.queryParams("artistname");
+                    String image = request1.queryParams("image");
                     try{
                         int artistIdNum = Integer.valueOf(artistId);
-                        insertFavorite(connection, userId, artistIdNum);
+                        insertFavorite(connection, userId, artistIdNum, artistName, image);
                     }
                     catch (Exception e){
                         System.out.println(e.getMessage());
@@ -473,7 +479,7 @@ public class Main {
             insertEntry(connection, "Metal ", "http://logonoid.com/images/dethklok-logo.png", "Slipknot", "http://rocketdock.com/images/screenshots/Slipknot_Logo.png", "Iowa", "http://vignette4.wikia.nocookie.net/slipknot/images/2/28/Iowa_(White_Cover).jpg/revision/latest?cb=20101227004932");
             insertEntry(connection, "Pop", "http://www.dezign.fr/images/pop-music1.png", "Taylor Swift", "http://orig11.deviantart.net/0093/f/2011/253/f/6/taylor_swift_png_002_by_xliketoysoldiers-d49hrhf.png", "1989", "https://upload.wikimedia.org/wikipedia/en/f/f6/Taylor_Swift_-_1989.png");
             insertEntry(connection, "Country", "country image", "Blake Shelton", "Blake Image", "Bring Back the Sunshine", "Sunshine Image");
-            insertFavorite(connection, 1, 1);
+            insertFavorite(connection, 1, 1, "Slipknot", "http://rocketdock.com/images/screenshots/Slipknot_Logo.png");
         }
 
 
