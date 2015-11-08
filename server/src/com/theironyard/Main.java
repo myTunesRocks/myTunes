@@ -15,10 +15,12 @@ public class Main {
         statement.execute("CREATE TABLE IF NOT EXISTS users (id IDENTITY, name VARCHAR, password VARCHAR)");
         //ADD GENRE TABLE WITH GENRE NAME, GENRE IMAGE
         statement.execute("CREATE TABLE IF NOT EXISTS genres (id IDENTITY, genre_name VARCHAR, genre_image VARCHAR)");
-        //ADD ARTISTS TABLE WITH ARTIST NAME, GENRE ID, ARTIST IMAGE
+        //ADD ARTISTS TABLE WITH ARTIST NAME, GENRE ID, ARTIST IMAGE, FAVORITE
         statement.execute("CREATE TABLE IF NOT EXISTS artists (id IDENTITY, artist_name VARCHAR, genre_id INT, artist_image VARCHAR)");
         //ADD ALBUMS TABLE WITH ARTIST ID, ALBUM NAME, ALBUM IMAGE
         statement.execute("CREATE TABLE IF NOT EXISTS albums (id IDENTITY, artist_id INT, album_name VARCHAR, album_image VARCHAR)");
+        //ADD FAVORITES TABLE
+        statement.execute("CREATE TABLE IF NOT EXISTS favorites (id IDENTITY, user_id INT, artist_id INT, is_favorite BOOLEAN)");
     }//End of createTables
 
     //ADD INSERT USER METHOD (CONNECTION, NAME, PASSWORD)
@@ -78,6 +80,16 @@ public class Main {
         statement.setString(3, albumImage);
         statement.execute();
     }//End of insertAlbum
+
+    //ADD INSERT FAVORITE
+    public static void insertFavorite(Connection connection, int userId, int artistId) throws SQLException {
+        boolean isFav = true;
+        PreparedStatement statement = connection.prepareStatement("INSERT INTO favorites VALUES(NULL, ?, ? ,?)");
+        statement.setInt(1, userId);
+        statement.setInt(2, artistId);
+        statement.setBoolean(3, isFav);
+        statement.execute();
+    }//END OF INSERT FAVORITE
 
     //SELECT USER(CONNECTION, NAME) (ONE USER)
     public static User selectUser(Connection conn, String name) throws SQLException {
@@ -190,6 +202,23 @@ public class Main {
         return albumArrayList;
     }//End of Select Album (Select ALL Albums)
 
+    //SELECT FAVORITES
+    public static ArrayList<Favorite> selectFavorites(Connection connection, int userId) throws SQLException{
+        ArrayList<Favorite> favoriteArrayList = new ArrayList<>();
+        PreparedStatement statement = connection.prepareStatement("SELECT * FROM favorites WHERE is_favorite = ?");
+        statement.setInt(1, 1);
+        ResultSet favoritesResult = statement.executeQuery();
+        while(favoritesResult.next()){
+            Favorite tempFavorite = new Favorite();
+            tempFavorite.id = favoritesResult.getInt("id");
+            tempFavorite.userId = favoritesResult.getInt("user_id");
+            tempFavorite.artistId = favoritesResult.getInt("artist_id");
+            tempFavorite.isfav = favoritesResult.getBoolean("is_favorite");
+            favoriteArrayList.add(tempFavorite);
+        }
+        return favoriteArrayList;
+    }
+
 
     //////////////////////////////////////////////////////////////////////////////////////////
 
@@ -284,6 +313,24 @@ public class Main {
                 })
 
         );//End of Spark.get() /get-album (Get ONE Album)
+
+        //SPARK.GET ---> GET ALL FAVORITES BASED ON USER ID
+        Spark.get(
+                "/get-favorites",
+                ((request1, response1) -> {
+                    String username = request1.queryParams("username");
+                    try{
+                        int userId = Integer.valueOf(username);
+                        JsonSerializer serializer = new JsonSerializer();
+                        String json = serializer.serialize(selectFavorites(connection,userId));
+                        return json;
+
+                    }catch (Exception e){
+
+                    }
+                    return "";
+                })
+        );//End of Spark.get() /get-favorites (All favorites by User Id)
 
 
 
@@ -401,9 +448,11 @@ public class Main {
         */
 
         if (selectGenres(connection).size() == 0) {
-            insertEntry(connection, "Metal;", "http://logonoid.com/images/dethklok-logo.png", "Slipknot", "http://rocketdock.com/images/screenshots/Slipknot_Logo.png", "Iowa", "http://vignette4.wikia.nocookie.net/slipknot/images/2/28/Iowa_(White_Cover).jpg/revision/latest?cb=20101227004932");
+            insertUser(connection, "Duke", "Duke");
+            insertEntry(connection, "Metal", "http://logonoid.com/images/dethklok-logo.png", "Slipknot", "http://rocketdock.com/images/screenshots/Slipknot_Logo.png", "Iowa", "http://vignette4.wikia.nocookie.net/slipknot/images/2/28/Iowa_(White_Cover).jpg/revision/latest?cb=20101227004932");
             insertEntry(connection, "Pop", "http://www.dezign.fr/images/pop-music1.png", "Taylor Swift", "http://orig11.deviantart.net/0093/f/2011/253/f/6/taylor_swift_png_002_by_xliketoysoldiers-d49hrhf.png", "1989", "https://upload.wikimedia.org/wikipedia/en/f/f6/Taylor_Swift_-_1989.png");
             insertEntry(connection, "Country", "country image", "Blake Shelton", "Blake Image", "Bring Back the Sunshine", "Sunshine Image");
+            insertFavorite(connection, 1, 1);
         }
 
 
