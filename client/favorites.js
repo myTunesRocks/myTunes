@@ -10,21 +10,7 @@ var loadFavorites = {
       url: '/get-favorites',
       method: 'GET',
       success: function(data){
-        console.log('SUCCESS LOAD FAVORITES', JSON.parse(data));
-        newData = JSON.parse(data);
-        $('.favoritesPage').html('');
-
-      },
-      failure: function(data){
-        console.log('FAILURE', data)
-      }
-  });
-    $.ajax({
-      url: '/get-favorites',
-      method: 'GET',
-      success: function(data){
-        newData = JSON.parse(data);
-        console.log('SUCCESS GET FAVORITES', newData);
+        console.log('SUCCESS GET FAVORITES', data);
       },
       failure: function(data){
         console.log('FAILURE', newData)

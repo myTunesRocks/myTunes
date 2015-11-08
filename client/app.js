@@ -12,7 +12,6 @@ var page = {
   },
   styling: function(){
     loadContent.init();
-    loadFavorites.init();
   },
   events: function(){
     createContent.init();
@@ -75,6 +74,7 @@ var page = {
       $('.landingPage').addClass('hidden');
       $('.genrePage').removeClass('hidden');
       $('.genrePage').addClass('active');
+      loadFavorites.init();
     });
 
     ///HIDE GENRE ACCESS ARTIST///
@@ -99,7 +99,6 @@ var page = {
       loadContent.loadAlbum(artistID);
       $('.albumPage').removeClass('hidden');
       $('.albumPage').addClass('active');
-
     });
 
   },
