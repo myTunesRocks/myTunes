@@ -193,7 +193,15 @@ a:focus {
   }
 }
 
-
+.backArtist, .backAlbum {
+  background-color: #16174f;
+  padding: 5px;
+  border-radius: 5px;
+  margin: 0;
+  color: white;
+  font-family: 'Alegreya Sans SC', sans-serif;
+  width: 7%;
+}
 
 
 footer {

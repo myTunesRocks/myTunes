@@ -5,6 +5,7 @@ body {
   color: #16174f;
   display: inline-block;
   font-size: 100px; }
+
 .logoInfo h1 {
   color: #16174f;
   display: inline-block;
@@ -38,7 +39,9 @@ body {
   margin-top: 10px;
   font-family: 'Alegreya Sans SC', sans-serif; }
 
-.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
   color: #fff;
   background-color: #16174f;
   border-color: #16174f; }
@@ -156,6 +159,15 @@ a:focus {
     border-radius: 5px;
     margin-top: 5px; }
 
+.backArtist, .backAlbum {
+  background-color: #16174f;
+  padding: 5px;
+  border-radius: 5px;
+  margin: 0;
+  color: white;
+  font-family: 'Alegreya Sans SC', sans-serif;
+  width: 7%; }
+
 footer {
   margin-top: 25%;
   border-top: 2px solid #16174f;
@@ -167,5 +179,3 @@ footer {
     margin-top: 10px;
     margin-bottom: 10px;
     font-weight: bold; }
-
-/*# sourceMappingURL=styles.css.map */
