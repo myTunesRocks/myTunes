@@ -207,8 +207,8 @@ public class Main {
     //SELECT FAVORITES
     public static ArrayList<Favorite> selectFavorites(Connection connection, int userId) throws SQLException{
         ArrayList<Favorite> favoriteArrayList = new ArrayList<>();
-        PreparedStatement statement = connection.prepareStatement("SELECT * FROM favorites INNER JOIN users ON favorites.user_id = users.id WHERE is_favorite = ?");
-        statement.setInt(1, 1);
+        PreparedStatement statement = connection.prepareStatement("SELECT * FROM favorites INNER JOIN users ON favorites.user_id = users.id WHERE is_favorite = true AND user_id = ?");
+        statement.setInt(1, userId);
         ResultSet favoritesResult = statement.executeQuery();
         while(favoritesResult.next()){
             Favorite tempFavorite = new Favorite();
@@ -326,7 +326,8 @@ public class Main {
                     String username = session.attribute("username");
                     User me = selectUser(connection, username);
                     JsonSerializer serializer = new JsonSerializer();
-                    String json = serializer.serialize(selectFavorites(connection, me.id));
+                    ArrayList<Favorite> favs = selectFavorites(connection, me.id);
+                    String json = serializer.serialize(favs);
                     return json;
                 })
         );//End of Spark.get() /get-favorites (All favorites by User Id)

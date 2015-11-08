@@ -24,9 +24,6 @@ public class Favorite {
         return artistId;
     }
 
-    public boolean isfav() {
-        return isfav;
-    }
     public String getArtistName() {
         return artistName;
     }
@@ -35,5 +32,7 @@ public class Favorite {
         return image;
     }
 
-
+    public boolean isfav() {
+        return isfav;
+    }
 }
