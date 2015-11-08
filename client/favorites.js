@@ -11,20 +11,20 @@ var loadFavorites = {
       method: 'GET',
       success: function(data){
         console.log('SUCCESS LOAD FAVORITES', JSON.parse(data));
-        newData = JSON.parse(data);
-        var favoritesTemplate = _.template(templates.favTmpl);
-        loadFavoritesData = '';
-        _.each(newData, function(el, idx, arr){
-          if(el.image === ''){
-            el.image = 'record_with_needle_darkGreen.png';
-            console.log('blue', el)
-          }
-          loadFavoritesData += favoritesTemplate(el);
-          console.log('ALBUM DATA', favoritesTemplate(el))
-          ///THIS IS WHERE THE ALBUM TEMPLATE GOES //
-        });
-        $('.favoritesPage').html('');
-        $('.favoritesPage').append('<h1>Favorites</h1>' + "<div class = 'backAlbum'><span class='glyphicon glyphicon-music'></span>Back</div>" + loadFavoritesData);
+        // newData = JSON.parse(data);
+        // var favoritesTemplate = _.template(templates.favTmpl);
+        // loadFavoritesData = '';
+        // _.each(newData, function(el, idx, arr){
+        //   if(el.image === ''){
+        //     el.image = 'record_with_needle_darkGreen.png';
+        //     console.log('blue', el)
+        //   }
+        //   loadFavoritesData += favoritesTemplate(el);
+        //   console.log('ALBUM DATA', favoritesTemplate(el))
+        //   ///THIS IS WHERE THE ALBUM TEMPLATE GOES //
+        // });
+        // $('.favoritesPage').html('');
+        // $('.favoritesPage').append('<h1>Favorites</h1>' + "<div class = 'backAlbum'><span class='glyphicon glyphicon-music'></span>Back</div>" + loadFavoritesData);
         ///GREEN === ALBUM PAGE //
       },
       failure: function(data){
