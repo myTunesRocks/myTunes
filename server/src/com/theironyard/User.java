@@ -11,6 +11,9 @@ public class User {
     String password;
     ArrayList<Favorite> favoriteArrayList;
 
+    public ArrayList<Favorite> getFavoriteArrayList() {
+        return favoriteArrayList;
+    }
 
     public int getId() {
         return id;
