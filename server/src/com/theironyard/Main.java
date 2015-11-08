@@ -253,7 +253,7 @@ public class Main {
                         String json = serializer.serialize(selectGenre(connection, idNum));
                         return json;
                     } catch (Exception e) {
-
+                        System.out.println(e.getMessage());
                     }
                     return "";
                 })
@@ -280,7 +280,7 @@ public class Main {
                         String json = serializer.serialize(selectArtist(connection, idNum));
                         return json;
                     } catch (Exception e) {
-
+                        System.out.println(e.getMessage());
                     }
                     return "";
                 })
@@ -307,7 +307,7 @@ public class Main {
                         String json = serializer.serialize(selectAlbum(connection, idNum));
                         return json;
                     } catch (Exception e) {
-
+                        System.out.println(e.getMessage());
                     }
                     return "";
                 })
@@ -327,7 +327,7 @@ public class Main {
                         return json;
 
                     }catch (Exception e){
-
+                        System.out.println(e.getMessage());
                     }
                     return "";
                 })
@@ -389,7 +389,7 @@ public class Main {
                         int genreIdNum = Integer.valueOf(genreId);
                         insertArtist(connection, artistName, genreIdNum, artistImage);
                     }catch (Exception e){
-
+                        System.out.println(e.getMessage());
                     }
                     return "";
                 })
@@ -407,7 +407,7 @@ public class Main {
                         insertAlbum(connection, albumName, artistIdNum, albumImage);
                     }
                     catch(Exception e){
-
+                        System.out.println(e.getMessage());
                     }
                     return "";
                 })
@@ -442,7 +442,7 @@ public class Main {
                         insertFavorite(connection, userId, artistIdNum);
                     }
                     catch (Exception e){
-
+                        System.out.println(e.getMessage());
                     }
                     return "";
                 })
