@@ -320,10 +320,10 @@ public class Main {
                 ((request1, response1) -> {
                     Session session = request1.session();
                     String username = session.attribute("username");
+                    User me = selectUser(connection, username);
                     try{
-                        int userId = Integer.valueOf(username);
                         JsonSerializer serializer = new JsonSerializer();
-                        String json = serializer.serialize(selectFavorites(connection,userId));
+                        String json = serializer.serialize(selectFavorites(connection,me.id));
                         return json;
 
                     }catch (Exception e){
