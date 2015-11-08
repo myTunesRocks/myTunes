@@ -318,7 +318,8 @@ public class Main {
         Spark.get(
                 "/get-favorites",
                 ((request1, response1) -> {
-                    String username = request1.queryParams("username");
+                    Session session = request1.session();
+                    String username = session.attribute("username");
                     try{
                         int userId = Integer.valueOf(username);
                         JsonSerializer serializer = new JsonSerializer();
