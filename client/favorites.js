@@ -19,17 +19,17 @@ var loadFavorites = {
   },
   /////GETTING FAVORTIES/////
   styling: function(){
-    $.ajax({
-      url: '/create-favorite',
-      method: 'POST',
-      success: function(data){
-        newData = JSON.parse(data);
-        console.log('SUCCESS CREATE FAV', newData);
-      },
-      failure: function(data){
-        console.log('FAILURE CREATE FAV', newData);
-      },
-    });
+    // $.ajax({
+    //   url: '/create-favorite',
+    //   method: 'POST',
+    //   success: function(data){
+    //     newData = JSON.parse(data);
+    //     console.log('SUCCESS CREATE FAV', newData);
+    //   },
+    //   failure: function(data){
+    //     console.log('FAILURE CREATE FAV', newData);
+    //   },
+    // });
   },
 
 
