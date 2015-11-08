@@ -17,6 +17,7 @@ var page = {
     createContent.init();
     page.showAndHide();
     login.init();
+    page.favorites();
   },
   showAndHide: function(){
 
@@ -28,11 +29,12 @@ var page = {
    });
    $('body').on('click', '.addMusic', function(event){
      event.preventDefault();
-     $('form').toggleClass('hidden');
+     $('.addMusicForm').removeClass('hidden');
      $('.hamburger').toggleClass('expanded').siblings('div').slideToggle();
-     $('.genrePage').addClass('hidden');
      $('.artistPage').addClass('hidden');
      $('.albumPage').addClass('hidden');
+     $('.genrePage').addClass('hidden');
+
    });
    ////LOGO CLICK LINK //////
    $('.logo').on('click', function(){
@@ -72,6 +74,7 @@ var page = {
       $('.landingPage').addClass('hidden');
       $('.genrePage').removeClass('hidden');
       $('.genrePage').addClass('active');
+      loadFavorites.init();
     });
 
     ///HIDE GENRE ACCESS ARTIST///
@@ -96,9 +99,20 @@ var page = {
       loadContent.loadAlbum(artistID);
       $('.albumPage').removeClass('hidden');
       $('.albumPage').addClass('active');
-
     });
 
+  },
+
+  favorites: function(){
+    $('body').on('click', '.favorites', function(){
+
+      $('.hamburger').toggleClass('expanded').siblings('div').slideToggle();
+      $('.favoritesPage').removeClass('hidden');
+      $('.addMusicForm').addClass('hidden');
+      $('.artistPage').addClass('hidden');
+      $('.albumPage').addClass('hidden');
+      $('.genrePage').addClass('hidden');
+    });
   },
 
 };

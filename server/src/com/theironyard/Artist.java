@@ -10,12 +10,13 @@ public class Artist {
     String artistName;
     int genreId;
     String image;
+    ArrayList<Album> albumArrayList;
+
 
     public String getImage() {
         return image;
     }
 
-    ArrayList<Album> albumArrayList;
 
     public int getGenreId() {
         return genreId;
