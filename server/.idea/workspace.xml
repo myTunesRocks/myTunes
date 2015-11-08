@@ -7,25 +7,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="67ff78df-d655-429b-8bc0-9638c91cb95a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/theironyard/Favorite.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test.trace.db" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../.idea/uiDesigner.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/KnockOnSpotify/META-INF/MANIFEST.MF" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/com/theironyard/MainTest.java" afterPath="$PROJECT_DIR$/test/com/theironyard/MainTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../KnockOnSpotify.jar" afterPath="$PROJECT_DIR$/../KnockOnSpotify.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KnockOnSpotify_jar/KnockOnSpotify.jar" afterPath="$PROJECT_DIR$/out/artifacts/KnockOnSpotify_jar/KnockOnSpotify.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/KnockOnSpotify/com/theironyard/Main.class" afterPath="$PROJECT_DIR$/out/production/KnockOnSpotify/com/theironyard/Main.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/test/KnockOnSpotify/com/theironyard/MainTest.class" afterPath="$PROJECT_DIR$/out/test/KnockOnSpotify/com/theironyard/MainTest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/KnockOnSpotify/com/theironyard/User.class" afterPath="$PROJECT_DIR$/out/production/KnockOnSpotify/com/theironyard/User.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/KnockOnSpotify.iml" afterPath="$PROJECT_DIR$/KnockOnSpotify.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/theironyard/Main.java" afterPath="$PROJECT_DIR$/src/com/theironyard/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/theironyard/User.java" afterPath="$PROJECT_DIR$/src/com/theironyard/User.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.mv.db" afterPath="$PROJECT_DIR$/main.mv.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../.idea/myTunes.iml" afterPath="$PROJECT_DIR$/../.idea/myTunes.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test.mv.db" afterPath="$PROJECT_DIR$/test.mv.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../.idea/workspace.xml" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="KnockOnSpotify.iws" />
@@ -622,7 +607,13 @@
       <option name="project" value="LOCAL" />
       <updated>1446924946267</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Add Favorites Table/Insert Fav/Select Favs by User">
+      <created>1447005991616</created>
+      <option name="number" value="00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1447005991616</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -671,7 +662,8 @@
     <MESSAGE value="Update JAR and db files w/User and Login Functions" />
     <MESSAGE value="Update JAR and db files w/User and Login AND Logout Functions" />
     <MESSAGE value="Version (2) Saturday" />
-    <option name="LAST_COMMIT_MESSAGE" value="Version (2) Saturday" />
+    <MESSAGE value="Add Favorites Table/Insert Fav/Select Favs by User" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Favorites Table/Insert Fav/Select Favs by User" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
