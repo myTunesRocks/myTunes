@@ -7,10 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="67ff78df-d655-429b-8bc0-9638c91cb95a" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../KnockOnSpotify.jar" afterPath="$PROJECT_DIR$/../KnockOnSpotify.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KnockOnSpotify_jar/KnockOnSpotify.jar" afterPath="$PROJECT_DIR$/out/artifacts/KnockOnSpotify_jar/KnockOnSpotify.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/KnockOnSpotify/com/theironyard/Main.class" afterPath="$PROJECT_DIR$/out/production/KnockOnSpotify/com/theironyard/Main.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/test/KnockOnSpotify/com/theironyard/MainTest.class" afterPath="$PROJECT_DIR$/out/test/KnockOnSpotify/com/theironyard/MainTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/KnockOnSpotify/com/theironyard/User.class" afterPath="$PROJECT_DIR$/out/production/KnockOnSpotify/com/theironyard/User.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="KnockOnSpotify.iws" />
@@ -36,8 +34,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/theironyard/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.95535713">
-              <caret line="448" column="0" selection-start-line="448" selection-start-column="0" selection-end-line="448" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.64285713">
+              <caret line="459" column="0" selection-start-line="459" selection-start-column="0" selection-end-line="459" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -184,10 +182,6 @@
               <option name="myItemId" value="server" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -209,11 +203,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="theironyard" />
+              <option name="myItemId" value="out" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -227,11 +217,15 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
+              <option name="myItemId" value="out" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="theironyard" />
+              <option name="myItemId" value="artifacts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="KnockOnSpotify_jar" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -613,7 +607,19 @@
       <option name="project" value="LOCAL" />
       <updated>1447005991616</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Add Favorites Table/Insert Fav/Select Favs by User">
+      <created>1447006006890</created>
+      <option name="number" value="00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1447006006890</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Add Favorites Table/Insert Fav/Select Favs by User (refreshed DB)">
+      <created>1447006046064</created>
+      <option name="number" value="00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1447006046064</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -663,7 +669,8 @@
     <MESSAGE value="Update JAR and db files w/User and Login AND Logout Functions" />
     <MESSAGE value="Version (2) Saturday" />
     <MESSAGE value="Add Favorites Table/Insert Fav/Select Favs by User" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Favorites Table/Insert Fav/Select Favs by User" />
+    <MESSAGE value="Add Favorites Table/Insert Fav/Select Favs by User (refreshed DB)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Favorites Table/Insert Fav/Select Favs by User (refreshed DB)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -862,8 +869,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/theironyard/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.95535713">
-          <caret line="448" column="0" selection-start-line="448" selection-start-column="0" selection-end-line="448" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.64285713">
+          <caret line="459" column="0" selection-start-line="459" selection-start-column="0" selection-end-line="459" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
