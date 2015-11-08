@@ -427,6 +427,23 @@ public class Main {
                 })
         );//End of Spark.post() /create-entry (ALL FIELDS AT ONCE)
 
+        Spark.post(
+                "/create-favorite",
+                ((request1, response1) -> {
+                    String userId = request1.queryParams("id");
+                    String artistId = request1.queryParams("artistid");
+                    try{
+                        int userIdNum = Integer.valueOf(userId);
+                        int artistIdNum = Integer.valueOf(artistId);
+                        insertFavorite(connection, userIdNum, artistIdNum);
+                    }
+                    catch (Exception e){
+
+                    }
+                    return "";
+                })
+        );
+
 
         //SPARK.POST ----> /logout (Logout from session)
         Spark.post(
