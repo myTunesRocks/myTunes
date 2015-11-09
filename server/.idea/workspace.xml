@@ -9,7 +9,6 @@
     <list default="true" id="67ff78df-d655-429b-8bc0-9638c91cb95a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../KnockOnSpotify.jar" afterPath="$PROJECT_DIR$/../KnockOnSpotify.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/theironyard/Main.java" afterPath="$PROJECT_DIR$/src/com/theironyard/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../.idea/workspace.xml" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="KnockOnSpotify.iws" />
@@ -35,8 +34,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/theironyard/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8761062">
-              <caret line="475" column="344" selection-start-line="475" selection-start-column="344" selection-end-line="475" selection-end-column="344" />
+            <state vertical-scroll-proportion="0.5641593">
+              <caret line="17" column="48" selection-start-line="17" selection-start-column="48" selection-end-line="17" selection-end-column="48" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -812,7 +811,13 @@
       <option name="project" value="LOCAL" />
       <updated>1447019881375</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="Add country, blake pics">
+      <created>1447078273420</created>
+      <option name="number" value="00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1447078273420</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -871,7 +876,8 @@
     <MESSAGE value="New Jar File with User getter for favorites" />
     <MESSAGE value="Add Artist Name and Image to Favorite Class" />
     <MESSAGE value="Add Artist Name and Image to Favorite Class()()" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Artist Name and Image to Favorite Class()()" />
+    <MESSAGE value="Add country, blake pics" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add country, blake pics" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1238,8 +1244,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/theironyard/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8761062">
-          <caret line="475" column="344" selection-start-line="475" selection-start-column="344" selection-end-line="475" selection-end-column="344" />
+        <state vertical-scroll-proportion="0.5641593">
+          <caret line="17" column="48" selection-start-line="17" selection-start-column="48" selection-end-line="17" selection-end-column="48" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

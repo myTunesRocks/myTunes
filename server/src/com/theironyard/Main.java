@@ -11,6 +11,12 @@ public class Main {
 
     public static void createTables(Connection connection) throws SQLException{
         Statement statement = connection.createStatement();
+        statement.execute("DROP TABLE IF EXISTS users");
+        statement.execute("DROP TABLE IF EXISTS genres");
+        statement.execute("DROP TABLE IF EXISTS artists");
+        statement.execute("DROP TABLE IF EXISTS albums");
+        statement.execute("DROP TABLE IF EXISTS favorites");
+
         //ADD USER TABLE WITH USER AND PASSWORD
         statement.execute("CREATE TABLE IF NOT EXISTS users (id IDENTITY, name VARCHAR, password VARCHAR)");
         //ADD GENRE TABLE WITH GENRE NAME, GENRE IMAGE
