@@ -21,6 +21,7 @@ var login = {
         console.log('SUCCESS', data);
         $('.mobile').removeClass('hidden');
         $('.back').removeClass('hidden');
+        loadFavorites.init();
       },
       error: function(data){
         console.log('FAILURE', data);
