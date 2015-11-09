@@ -34,8 +34,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/theironyard/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5641593">
-              <caret line="17" column="48" selection-start-line="17" selection-start-column="48" selection-end-line="17" selection-end-column="48" />
+            <state vertical-scroll-proportion="0.8761062">
+              <caret line="481" column="223" selection-start-line="481" selection-start-column="223" selection-end-line="481" selection-end-column="223" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -817,7 +817,13 @@
       <option name="project" value="LOCAL" />
       <updated>1447078273420</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="Add country, blake pics">
+      <created>1447078791185</created>
+      <option name="number" value="00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1447078791185</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1244,8 +1250,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/theironyard/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5641593">
-          <caret line="17" column="48" selection-start-line="17" selection-start-column="48" selection-end-line="17" selection-end-column="48" />
+        <state vertical-scroll-proportion="0.8761062">
+          <caret line="481" column="223" selection-start-line="481" selection-start-column="223" selection-end-line="481" selection-end-column="223" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
